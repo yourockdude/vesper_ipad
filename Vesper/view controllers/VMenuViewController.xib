@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Acrom-Medium.otf">
+            <string>Acrom-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VMenuViewController">
+            <connections>
+                <outlet property="facebookButton" destination="MaN-MU-4g9" id="xhJ-jv-ECO"/>
+                <outlet property="instagramButton" destination="I8t-PW-oTi" id="cso-A7-7bW"/>
+                <outlet property="menuTableView" destination="eqC-4x-SYe" id="B0z-H5-gZB"/>
+                <outlet property="rightContentView" destination="Rae-xr-rd2" id="tLb-5X-fkx"/>
+                <outlet property="siteButton" destination="xiJ-TN-fVB" id="DCi-zU-K8w"/>
+                <outlet property="versionLabel" destination="a3a-FZ-lwR" id="Rca-fb-oQ6"/>
+                <outlet property="view" destination="iN0-l3-epB" id="TGA-o8-mFQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eqC-4x-SYe">
+                    <rect key="frame" x="0.0" y="0.0" width="286" height="736"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="TNE-CE-hk6"/>
+                        <outlet property="delegate" destination="-1" id="LZg-Ut-DIv"/>
+                    </connections>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3a-FZ-lwR">
+                    <rect key="frame" x="16" y="710.33333333333348" width="382" height="9.6666666666666288"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="8"/>
+                    <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MaN-MU-4g9">
+                    <rect key="frame" x="26" y="658.33333333333337" width="34" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" image="facebook_button_default.png"/>
+                    <state key="highlighted" image="facebook_button_highlighted.png"/>
+                    <connections>
+                        <action selector="facebookButton_TUI:" destination="-1" eventType="touchUpInside" id="89w-PL-zse"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="I8t-PW-oTi">
+                    <rect key="frame" x="76" y="658.33333333333337" width="34" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" image="instagram_button_default.png"/>
+                    <state key="highlighted" image="instagram_button_highlighted.png"/>
+                    <connections>
+                        <action selector="instagramButton_TUI:" destination="-1" eventType="touchUpInside" id="xIC-AJ-02A"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xiJ-TN-fVB">
+                    <rect key="frame" x="126" y="659.66666666666663" width="262" height="32"/>
+                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="16"/>
+                    <state key="normal" title="www.vespermoscow.com">
+                        <color key="titleColor" red="0.51764705882352935" green="0.51764705882352935" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="siteButton_TUI:" destination="-1" eventType="touchUpInside" id="axU-UR-sxo"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rae-xr-rd2">
+                    <rect key="frame" x="286" y="0.0" width="128" height="643.66666666666663"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="128" id="3sW-NB-TMs"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="a3a-FZ-lwR" secondAttribute="trailing" constant="16" id="0Qj-pp-HZw"/>
+                <constraint firstAttribute="bottom" secondItem="eqC-4x-SYe" secondAttribute="bottom" id="AOF-4E-bRf"/>
+                <constraint firstItem="I8t-PW-oTi" firstAttribute="leading" secondItem="MaN-MU-4g9" secondAttribute="trailing" constant="16" id="D48-r1-WMs"/>
+                <constraint firstAttribute="trailing" secondItem="Rae-xr-rd2" secondAttribute="trailing" id="HEe-AX-TSt"/>
+                <constraint firstItem="a3a-FZ-lwR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="NHZ-r5-hxy"/>
+                <constraint firstItem="MaN-MU-4g9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="26" id="RLm-gN-GjO"/>
+                <constraint firstItem="eqC-4x-SYe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TJ0-F6-YJp"/>
+                <constraint firstAttribute="trailing" secondItem="xiJ-TN-fVB" secondAttribute="trailing" constant="26" id="Yva-X9-lQk"/>
+                <constraint firstItem="xiJ-TN-fVB" firstAttribute="leading" secondItem="I8t-PW-oTi" secondAttribute="trailing" constant="16" id="cTY-MT-bX1"/>
+                <constraint firstItem="eqC-4x-SYe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cnE-42-3ng"/>
+                <constraint firstItem="Rae-xr-rd2" firstAttribute="leading" secondItem="eqC-4x-SYe" secondAttribute="trailing" id="d3b-eN-wuV"/>
+                <constraint firstItem="xiJ-TN-fVB" firstAttribute="top" secondItem="Rae-xr-rd2" secondAttribute="bottom" constant="16" id="i3E-BG-kws"/>
+                <constraint firstItem="Rae-xr-rd2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kVq-g2-OL5"/>
+                <constraint firstItem="I8t-PW-oTi" firstAttribute="centerY" secondItem="MaN-MU-4g9" secondAttribute="centerY" id="nzu-vs-7gg"/>
+                <constraint firstAttribute="bottom" secondItem="a3a-FZ-lwR" secondAttribute="bottom" constant="16" id="rdg-c0-1BH"/>
+                <constraint firstItem="xiJ-TN-fVB" firstAttribute="centerY" secondItem="I8t-PW-oTi" secondAttribute="centerY" id="thF-Dr-KcY"/>
+                <constraint firstItem="a3a-FZ-lwR" firstAttribute="top" secondItem="MaN-MU-4g9" secondAttribute="bottom" constant="18" id="xBP-b7-DBW"/>
+            </constraints>
+            <point key="canvasLocation" x="-108" y="-752"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="facebook_button_default.png" width="34" height="34"/>
+        <image name="facebook_button_highlighted.png" width="34" height="34"/>
+        <image name="instagram_button_default.png" width="34" height="34"/>
+        <image name="instagram_button_highlighted.png" width="34" height="34"/>
+    </resources>
+</document>

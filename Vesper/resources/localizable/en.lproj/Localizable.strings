@@ -1,0 +1,77 @@
+/*
+  Localizable.strings
+  Vesper
+
+  Created by Vladimir Psyukalov on 30.11.16.
+  Copyright © 2016 Yourockdude. All rights reserved.
+*/
+
+"about_us" = "ABOUT";
+"projects" = "DEVELOPMENTS";
+"contacts" = "CONTACTS";
+"news" = "GALLERY";
+"call" = "CONTACT US";
+"updates" = "UPDATES";
+
+"version" = "Version 1.2";
+"design" = "Design by Madebyvadim";
+"development" = "Development YOUROCK INC";
+
+"_about_us" = "Overview";
+"about_us_1_text" = "Vesper is a private company investing in prime residential property in Moscow and European countries. The company portfolio consists of 11 de luxe projects of different stages of development including renovation of historic buildings and cultural property sites. One-off contemporary architectural designs, advanced technologies, high-quality materials and best international real estate practices are implemented in each of Vesper residential properties.";
+"about_us_2_text" = "The company projects are noted for their cosmopolitanism; they embody the most successful world expertise adapted to the national historical and architectural specifics of the city. Vesper respects the history; that is why the company is engaged in the renovation of historic buildings and cultural property sites. Vesper de luxe houses are intended for the most exacting buyers who set a high value on the unique location combined with the individual architectural designs and state-of-the-art technologies, ensuring the high-quality living standards. Vesper founders and shareholders are Denis Kitaev and Boris Azarenko.";
+"popular_places" = "Vesper key projects in Moscow are:";
+
+"_contacts" = "Contacts";
+"office" = "Office";
+"reseller" = "Reseller";
+"press" = "Press";
+"address" = "Аврора Бизнес Парк,\nСадовническая набережная, 75, корпус F2, 5 этаж";
+"telephone_1" = "+7 495 981 0900";
+"telephone_2" = "+7 495 287 7799";
+"telephone_3" = "+7 917 552 0713";
+"email_1" = "info@vespermoscow.com";
+"email_2" = "sale@vespermoscow.com";
+"email_3" = "pr@vespermoscow.com";
+"name" = "Mariya Davyidova";
+
+"description" = "Description";
+"location" = "Location";
+"team" = "Partners";
+
+"share" = "SHARE";
+"send_email" = "Send Email";
+"download_pdf" = "Open pdf";
+"send_sms" = "Send sms";
+
+"filter" = "FILTER";
+"all_projects" = "All Projects";
+"ready_apartments" = "Available to Buy";
+"accept" = "ACCEPT";
+
+"ready" = "Year";
+"square" = "Area";
+"apartments_count" = "Number of apartments";
+"flats_count" = "Number of flats";
+
+"later" = "LATER";
+"update" = "UPDATE";
+"download" = "Download...";
+"version" = "Version";
+"changelog" = "Changelog";
+"changelog_description" = "%ld new %@ of real property sites";
+"item" = "item";
+"items" = "items";
+
+"message_title" = "ERROR!";
+"repeat" = "REPEAT";
+
+"cancel" = "CANCEL";
+
+"no_pdf_title" = "No pdf file!";
+"no_pdf_description" = "File is not uploaded";
+
+"whatsapp" = "Send in WhatsApp";
+
+"no_whatsapp_title" = "WhatsApp";
+"no_whatsapp_description" = "Download WhatsApp in AppStore";

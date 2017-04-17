@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Acrom-Bold.otf">
+            <string>Acrom-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VObjectsListViewController">
+            <connections>
+                <outlet property="contentView" destination="ROw-Wi-kaL" id="d8y-Ob-PXy"/>
+                <outlet property="filterButton" destination="5LC-KI-C4z" id="skc-Mg-led"/>
+                <outlet property="logotypeImageView" destination="NLn-uU-QRk" id="wU3-3V-VmH"/>
+                <outlet property="menuButton" destination="PYQ-4t-shi" id="pTj-bj-RWs"/>
+                <outlet property="pageControl" destination="O1m-Ai-r8U" id="NBx-7e-uec"/>
+                <outlet property="updatesCountLabel" destination="orT-pr-Bpt" id="EqO-tB-pJu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="VD7-E6-Gzf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROw-Wi-kaL" customClass="iCarousel">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logotype_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="NLn-uU-QRk">
+                    <rect key="frame" x="195.66666666666666" y="0.0" width="23" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="o1B-J6-J5k"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYQ-4t-shi">
+                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="q5x-o4-qsW"/>
+                        <constraint firstAttribute="height" constant="44" id="wpG-WB-evN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" image="menu_button_default.png"/>
+                    <state key="selected" image="menu_button_selected.png"/>
+                    <connections>
+                        <action selector="menuButton_TUI:" destination="-1" eventType="touchUpInside" id="RJe-SA-0nd"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orT-pr-Bpt">
+                    <rect key="frame" x="34" y="14" width="8.3333333333333357" height="16"/>
+                    <color key="backgroundColor" red="0.64313725489999995" green="0.31372549020000001" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="SZl-Ij-Nw0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Acrom-Bold" family="Acrom" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LC-KI-C4z">
+                    <rect key="frame" x="370" y="0.0" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="7OM-Dr-HaR"/>
+                        <constraint firstAttribute="height" constant="44" id="Nyn-mH-q6H"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="16" maxY="0.0"/>
+                    <state key="normal" image="show_hilter_button_default.png"/>
+                    <state key="selected" image="show_filter_button_selected.png"/>
+                    <connections>
+                        <action selector="filterButton_TUI:" destination="-1" eventType="touchUpInside" id="xpf-Gu-ah5"/>
+                    </connections>
+                </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="O1m-Ai-r8U">
+                    <rect key="frame" x="0.0" y="699" width="414" height="37"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="currentPageIndicatorTintColor" red="0.64313725489999995" green="0.31372549020000001" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ROw-Wi-kaL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2oc-xk-8cN"/>
+                <constraint firstItem="ROw-Wi-kaL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4Ne-E9-0aV"/>
+                <constraint firstAttribute="bottom" secondItem="ROw-Wi-kaL" secondAttribute="bottom" id="7cA-JF-gMP"/>
+                <constraint firstItem="NLn-uU-QRk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CCk-Xj-TI1"/>
+                <constraint firstItem="5LC-KI-C4z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Efy-M2-PV6"/>
+                <constraint firstAttribute="trailing" secondItem="ROw-Wi-kaL" secondAttribute="trailing" id="IJP-Rq-PrY"/>
+                <constraint firstItem="NLn-uU-QRk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LtH-Ph-kLW"/>
+                <constraint firstItem="PYQ-4t-shi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Sba-Ju-Kxh"/>
+                <constraint firstItem="orT-pr-Bpt" firstAttribute="centerY" secondItem="PYQ-4t-shi" secondAttribute="centerY" id="Uzz-Xb-6XS"/>
+                <constraint firstAttribute="trailing" secondItem="O1m-Ai-r8U" secondAttribute="trailing" id="hKw-kB-edo"/>
+                <constraint firstAttribute="bottom" secondItem="O1m-Ai-r8U" secondAttribute="bottom" id="kUD-5G-Fz8"/>
+                <constraint firstItem="O1m-Ai-r8U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mAK-UT-TI8"/>
+                <constraint firstAttribute="trailing" secondItem="5LC-KI-C4z" secondAttribute="trailing" id="qhh-P7-XGg"/>
+                <constraint firstItem="orT-pr-Bpt" firstAttribute="leading" secondItem="PYQ-4t-shi" secondAttribute="trailing" constant="-10" id="rzn-nF-Nxu"/>
+                <constraint firstItem="PYQ-4t-shi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sVf-xt-fEZ"/>
+            </constraints>
+            <point key="canvasLocation" x="-267" y="-455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="logotype_image.png" width="23" height="23"/>
+        <image name="menu_button_default.png" width="15" height="14"/>
+        <image name="menu_button_selected.png" width="15" height="14"/>
+        <image name="show_filter_button_selected.png" width="20" height="19"/>
+        <image name="show_hilter_button_default.png" width="20" height="19"/>
+    </resources>
+</document>

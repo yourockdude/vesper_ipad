@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Objects_entity" representedClassName="Objects_entity" syncable="YES" codeGenerationType="class">
+        <attribute name="address_object" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="apartments_count" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="big_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier_object" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="latitude_object" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="little_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location_object" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_object" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photos_object" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ready_object" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="square_object" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="team_object" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url_additional" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url_object" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url_pdf" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Objects_entity" positionX="-63" positionY="-18" width="128" height="285"/>
+    </elements>
+</model>

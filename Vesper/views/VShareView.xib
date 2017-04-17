@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Acrom-Bold.otf">
+            <string>Acrom-Bold</string>
+        </array>
+        <array key="Acrom-Medium.otf">
+            <string>Acrom-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VShareView">
+            <connections>
+                <outlet property="closeButton" destination="Uk4-xp-BoI" id="ZYi-Lu-dxO"/>
+                <outlet property="downloadButton" destination="IJb-wn-AN5" id="1tv-qR-fQG"/>
+                <outlet property="sendEmailButton" destination="nad-Fj-ch2" id="Oj4-Oq-Q5c"/>
+                <outlet property="sendSMSButton" destination="P7J-t0-kcj" id="a98-pe-4jK"/>
+                <outlet property="titleLabel" destination="SI6-Ib-fzT" id="cAo-mF-iJH"/>
+                <outlet property="whatsappButton" destination="GW2-un-HPS" id="eSf-kb-kWl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Zkc-XV-LRA">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHARE" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SI6-Ib-fzT">
+                    <rect key="frame" x="153" y="30" width="70" height="19"/>
+                    <fontDescription key="fontDescription" name="Acrom-Bold" family="Acrom" pointSize="20"/>
+                    <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IJb-wn-AN5">
+                    <rect key="frame" x="22" y="144" width="331" height="72"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="72" id="Vcg-36-chk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="16"/>
+                    <state key="normal" title="Button" image="right_arrow_button_default.png">
+                        <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted" image="right_arrow_button_highlighted.png"/>
+                    <connections>
+                        <action selector="downloadButton_TUI:" destination="-1" eventType="touchUpInside" id="24i-U5-3oJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="P7J-t0-kcj">
+                    <rect key="frame" x="22" y="217" width="331" height="72"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="72" id="KfV-QM-uMT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="16"/>
+                    <state key="normal" title="Button" image="right_arrow_button_default.png">
+                        <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted" image="right_arrow_button_highlighted.png"/>
+                    <connections>
+                        <action selector="sendSMSButton_TUI:" destination="-1" eventType="touchUpInside" id="qJY-ol-mgZ"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Epf-YM-rvJ">
+                    <rect key="frame" x="22" y="216" width="331" height="1"/>
+                    <color key="backgroundColor" red="0.86105667549999998" green="0.86105667549999998" blue="0.86105667549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="DRL-UD-yzJ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HdI-aN-tU0">
+                    <rect key="frame" x="22" y="289" width="331" height="1"/>
+                    <color key="backgroundColor" red="0.86105667549999998" green="0.86105667549999998" blue="0.86105667549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="khG-pO-8qJ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gs2-a3-tUq">
+                    <rect key="frame" x="22" y="143" width="331" height="1"/>
+                    <color key="backgroundColor" red="0.86105667549999998" green="0.86105667549999998" blue="0.86105667549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="7xJ-az-ATA"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uk4-xp-BoI">
+                    <rect key="frame" x="156" y="370" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="7hF-CZ-JNx"/>
+                        <constraint firstAttribute="height" constant="64" id="xH6-Px-Cmj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" image="close_button_default.png"/>
+                    <state key="highlighted" image="close_button_highlighted.png"/>
+                    <connections>
+                        <action selector="closeButton_TUI:" destination="-1" eventType="touchUpInside" id="VBt-eF-so8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nad-Fj-ch2">
+                    <rect key="frame" x="22" y="71" width="331" height="72"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="72" id="Tei-Nq-hSI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="16"/>
+                    <state key="normal" title="Button" image="right_arrow_button_default.png">
+                        <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted" image="right_arrow_button_highlighted.png"/>
+                    <connections>
+                        <action selector="sendEmailButton_TUI:" destination="-1" eventType="touchUpInside" id="HWc-n0-ZM8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GW2-un-HPS">
+                    <rect key="frame" x="22" y="290" width="331" height="72"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="72" id="LQe-X3-lht"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="16"/>
+                    <state key="normal" title="Button" image="right_arrow_button_default.png">
+                        <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted" image="right_arrow_button_highlighted.png"/>
+                    <connections>
+                        <action selector="whatsappButton_TUI:" destination="-1" eventType="touchUpInside" id="8RB-PB-0rz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Uk4-xp-BoI" firstAttribute="top" secondItem="GW2-un-HPS" secondAttribute="bottom" constant="8" id="0OM-Qe-7IQ"/>
+                <constraint firstItem="gs2-a3-tUq" firstAttribute="trailing" secondItem="IJb-wn-AN5" secondAttribute="trailing" id="0d6-zJ-ywH"/>
+                <constraint firstItem="IJb-wn-AN5" firstAttribute="top" secondItem="gs2-a3-tUq" secondAttribute="bottom" id="222-NX-szf"/>
+                <constraint firstAttribute="trailing" secondItem="GW2-un-HPS" secondAttribute="trailing" constant="22" id="5ar-aM-ZqH"/>
+                <constraint firstItem="IJb-wn-AN5" firstAttribute="leading" secondItem="Zkc-XV-LRA" secondAttribute="leading" constant="22" id="5nN-ax-fOj"/>
+                <constraint firstItem="GW2-un-HPS" firstAttribute="top" secondItem="HdI-aN-tU0" secondAttribute="bottom" id="CX8-lm-iK8"/>
+                <constraint firstAttribute="trailing" secondItem="HdI-aN-tU0" secondAttribute="trailing" constant="22" id="GMk-xm-jQn"/>
+                <constraint firstItem="SI6-Ib-fzT" firstAttribute="centerX" secondItem="Zkc-XV-LRA" secondAttribute="centerX" id="Hgp-N4-Ysd"/>
+                <constraint firstItem="HdI-aN-tU0" firstAttribute="leading" secondItem="Zkc-XV-LRA" secondAttribute="leading" constant="22" id="JQS-qn-yvu"/>
+                <constraint firstAttribute="trailing" secondItem="P7J-t0-kcj" secondAttribute="trailing" constant="22" id="QFT-BI-fc2"/>
+                <constraint firstAttribute="bottom" secondItem="Uk4-xp-BoI" secondAttribute="bottom" constant="16" id="R1Q-vm-B3M"/>
+                <constraint firstAttribute="trailing" secondItem="nad-Fj-ch2" secondAttribute="trailing" constant="22" id="VpY-Gd-6tB"/>
+                <constraint firstItem="nad-Fj-ch2" firstAttribute="top" secondItem="SI6-Ib-fzT" secondAttribute="bottom" constant="22" id="Wpn-Hh-Scv"/>
+                <constraint firstItem="P7J-t0-kcj" firstAttribute="leading" secondItem="Zkc-XV-LRA" secondAttribute="leading" constant="22" id="ZQ5-Wr-SZ6"/>
+                <constraint firstAttribute="trailing" secondItem="IJb-wn-AN5" secondAttribute="trailing" constant="22" id="aXk-jl-DDQ"/>
+                <constraint firstItem="Epf-YM-rvJ" firstAttribute="leading" secondItem="IJb-wn-AN5" secondAttribute="leading" id="ghj-AP-c2k"/>
+                <constraint firstItem="GW2-un-HPS" firstAttribute="leading" secondItem="Zkc-XV-LRA" secondAttribute="leading" constant="22" id="i9a-ma-Wec"/>
+                <constraint firstItem="Epf-YM-rvJ" firstAttribute="trailing" secondItem="IJb-wn-AN5" secondAttribute="trailing" id="idI-S4-dug"/>
+                <constraint firstItem="SI6-Ib-fzT" firstAttribute="top" secondItem="Zkc-XV-LRA" secondAttribute="top" constant="30" id="kzn-ii-4Dg"/>
+                <constraint firstItem="HdI-aN-tU0" firstAttribute="top" secondItem="P7J-t0-kcj" secondAttribute="bottom" id="l3t-BU-YGZ"/>
+                <constraint firstItem="gs2-a3-tUq" firstAttribute="leading" secondItem="IJb-wn-AN5" secondAttribute="leading" id="lBJ-du-PGO"/>
+                <constraint firstItem="P7J-t0-kcj" firstAttribute="top" secondItem="Epf-YM-rvJ" secondAttribute="bottom" id="lF6-d8-obL"/>
+                <constraint firstItem="Uk4-xp-BoI" firstAttribute="centerX" secondItem="Zkc-XV-LRA" secondAttribute="centerX" id="maZ-QG-yIT"/>
+                <constraint firstItem="nad-Fj-ch2" firstAttribute="leading" secondItem="Zkc-XV-LRA" secondAttribute="leading" constant="22" id="qPq-EN-lFA"/>
+                <constraint firstItem="Epf-YM-rvJ" firstAttribute="top" secondItem="IJb-wn-AN5" secondAttribute="bottom" id="qZH-Tw-mBT"/>
+                <constraint firstItem="gs2-a3-tUq" firstAttribute="top" secondItem="nad-Fj-ch2" secondAttribute="bottom" id="uZt-r9-nZy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="30.5" y="-492"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close_button_default.png" width="19" height="19"/>
+        <image name="close_button_highlighted.png" width="19" height="19"/>
+        <image name="right_arrow_button_default.png" width="35" height="15"/>
+        <image name="right_arrow_button_highlighted.png" width="35" height="15"/>
+    </resources>
+</document>

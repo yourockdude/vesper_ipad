@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Acrom-Bold.otf">
+            <string>Acrom-Bold</string>
+        </array>
+        <array key="Acrom-Medium.otf">
+            <string>Acrom-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VContactsViewController">
+            <connections>
+                <outlet property="addressLabel" destination="AEE-qG-AKi" id="AUv-Sq-JjA"/>
+                <outlet property="contentView" destination="wa6-xT-Tiw" id="8jn-Cb-bDq"/>
+                <outlet property="emailButton" destination="mFD-ri-c5j" id="lkU-og-Cok"/>
+                <outlet property="email_1_Button" destination="qTP-bo-Ha5" id="lzE-Rn-6mL"/>
+                <outlet property="email_2_Button" destination="Og3-dW-Qcd" id="r9b-ZQ-CNr"/>
+                <outlet property="email_3_Button" destination="3dJ-yx-BfA" id="pjW-Pb-b0B"/>
+                <outlet property="facebookButton" destination="9VN-8U-2lX" id="lEt-0p-Ezz"/>
+                <outlet property="imageView" destination="fjd-p2-tY5" id="gRm-19-44O"/>
+                <outlet property="instagramButton" destination="O0g-06-6RU" id="fak-FI-Zgu"/>
+                <outlet property="logotypeImageView" destination="Mae-Mp-Zld" id="7qn-R7-nKi"/>
+                <outlet property="mapView" destination="xGi-CI-bul" id="Vl7-KD-eiw"/>
+                <outlet property="nameLabel" destination="0Ih-dW-Phf" id="Shn-CM-dpW"/>
+                <outlet property="scrollView" destination="3nj-ae-pSN" id="aM2-H3-D7E"/>
+                <outlet property="subtitle_1_Label" destination="qAk-3Q-zuK" id="WPx-po-mtJ"/>
+                <outlet property="subtitle_2_Label" destination="OY9-Jp-yFM" id="Wn4-iD-hu2"/>
+                <outlet property="subtitle_3_Label" destination="KZm-qo-Tfv" id="ANA-Xo-mRS"/>
+                <outlet property="telephone_1_Button" destination="ujQ-i4-K7c" id="dUP-xh-xat"/>
+                <outlet property="telephone_2_Button" destination="qwl-V6-ESr" id="nVB-Hi-vJK"/>
+                <outlet property="telephone_3_Button" destination="lnd-ev-BVA" id="JZe-iq-Hx4"/>
+                <outlet property="titleLabel" destination="22o-ZD-NtK" id="Bf5-NE-Xbl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avrora_business_center.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fjd-p2-tY5">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="282"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="282" id="e8V-F9-Bov"/>
+                    </constraints>
+                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nj-ae-pSN">
+                    <rect key="frame" x="0.0" y="282" width="414" height="918"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wa6-xT-Tiw">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="927.66666666666674"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22o-ZD-NtK">
+                                    <rect key="frame" x="20" y="32" width="75" height="46.666666666666686"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Bold" family="Acrom" pointSize="40"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle #1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAk-3Q-zuK">
+                                    <rect key="frame" x="20" y="106.66666666666669" width="374" height="32.666666666666629"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Bold" family="Acrom" pointSize="28"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ujQ-i4-K7c">
+                                    <rect key="frame" x="20" y="184.33333333333331" width="374" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="Vxs-OE-wOS"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="18"/>
+                                    <state key="normal" title="Telephone #1">
+                                        <color key="titleColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="telephone_1_Button_TUI:" destination="-1" eventType="touchUpInside" id="CzB-V6-6CQ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qTP-bo-Ha5">
+                                    <rect key="frame" x="20" y="220.33333333333331" width="374" height="28.000000000000057"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="swD-Kb-UbM"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="18"/>
+                                    <state key="normal" title="Email #1">
+                                        <color key="titleColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="email_1_Button_TUI:" destination="-1" eventType="touchUpInside" id="g6X-fI-j7x"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Og3-dW-Qcd">
+                                    <rect key="frame" x="20" y="390" width="374" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="0jb-oO-TbR"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="18"/>
+                                    <state key="normal" title="Email #2">
+                                        <color key="titleColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="email_2_Button_TUI:" destination="-1" eventType="touchUpInside" id="0SM-TE-BKI"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3dJ-yx-BfA">
+                                    <rect key="frame" x="20" y="589.66666666666663" width="374" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="d0f-ao-Aty"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="18"/>
+                                    <state key="normal" title="Email #3">
+                                        <color key="titleColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="email_3_Button_TUI:" destination="-1" eventType="touchUpInside" id="nBr-H5-bdI"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKa-el-vMy">
+                                    <rect key="frame" x="20" y="276.33333333333337" width="374" height="1"/>
+                                    <color key="backgroundColor" red="0.15686274509803921" green="0.17254901960784313" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="5bN-1P-nau"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IdY-4A-S6M">
+                                    <rect key="frame" x="20" y="446" width="374" height="1"/>
+                                    <color key="backgroundColor" red="0.15686274509803921" green="0.17254901960784313" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="yci-UV-3fY"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle #2" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OY9-Jp-yFM">
+                                    <rect key="frame" x="20" y="305.33333333333337" width="374" height="32.666666666666629"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Bold" family="Acrom" pointSize="28"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qwl-V6-ESr">
+                                    <rect key="frame" x="20" y="350" width="374" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="Izv-y7-3AY"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="18"/>
+                                    <state key="normal" title="Telephone #2">
+                                        <color key="titleColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="telephone_2_Button_TUI:" destination="-1" eventType="touchUpInside" id="zUM-WG-bx3"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle #3" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZm-qo-Tfv">
+                                    <rect key="frame" x="20" y="475" width="374" height="33.666666666666629"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Bold" family="Acrom" pointSize="28"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lnd-ev-BVA">
+                                    <rect key="frame" x="20" y="553.66666666666663" width="374" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="z81-TH-JtG"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="18"/>
+                                    <state key="normal" title="Telephone #3">
+                                        <color key="titleColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="telephone_3_Button_TUI:" destination="-1" eventType="touchUpInside" id="TjN-Fs-N22"/>
+                                    </connections>
+                                </button>
+                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xGi-CI-bul">
+                                    <rect key="frame" x="0.0" y="645.66666666666674" width="414" height="282.00000000000011"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="282" id="ES4-Ml-IXy"/>
+                                    </constraints>
+                                </mapView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEE-qG-AKi">
+                                    <rect key="frame" x="20" y="151.33333333333331" width="374" height="21"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="18"/>
+                                    <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ih-dW-Phf">
+                                    <rect key="frame" x="20" y="520.66666666666663" width="374" height="21"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="18"/>
+                                    <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="qwl-V6-ESr" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="0C6-f8-LvB"/>
+                                <constraint firstAttribute="trailing" secondItem="xGi-CI-bul" secondAttribute="trailing" id="1SK-3g-V3K"/>
+                                <constraint firstItem="KZm-qo-Tfv" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="45b-cI-gsG"/>
+                                <constraint firstAttribute="trailing" secondItem="ujQ-i4-K7c" secondAttribute="trailing" constant="20" id="5H0-Jc-YFc"/>
+                                <constraint firstItem="xGi-CI-bul" firstAttribute="top" secondItem="3dJ-yx-BfA" secondAttribute="bottom" constant="28" id="5Iw-r3-T85"/>
+                                <constraint firstAttribute="trailing" secondItem="0Ih-dW-Phf" secondAttribute="trailing" constant="20" id="6zU-LX-2aC"/>
+                                <constraint firstItem="KZm-qo-Tfv" firstAttribute="top" secondItem="IdY-4A-S6M" secondAttribute="bottom" constant="28" id="9Bv-c0-Kxl"/>
+                                <constraint firstItem="ujQ-i4-K7c" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="Axh-MF-ltD"/>
+                                <constraint firstItem="IdY-4A-S6M" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="DWg-UB-5bD"/>
+                                <constraint firstAttribute="trailing" secondItem="KZm-qo-Tfv" secondAttribute="trailing" constant="20" id="Df4-RR-Zuq"/>
+                                <constraint firstItem="OY9-Jp-yFM" firstAttribute="top" secondItem="NKa-el-vMy" secondAttribute="bottom" constant="28" id="E4N-B8-Nua"/>
+                                <constraint firstItem="qTP-bo-Ha5" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="EuS-XQ-tPf"/>
+                                <constraint firstItem="qAk-3Q-zuK" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="FSc-bt-y1U"/>
+                                <constraint firstItem="lnd-ev-BVA" firstAttribute="top" secondItem="0Ih-dW-Phf" secondAttribute="bottom" constant="12" id="Hpb-Yn-0oP"/>
+                                <constraint firstItem="qwl-V6-ESr" firstAttribute="top" secondItem="OY9-Jp-yFM" secondAttribute="bottom" constant="12" id="KE2-9q-r1O"/>
+                                <constraint firstItem="NKa-el-vMy" firstAttribute="top" secondItem="qTP-bo-Ha5" secondAttribute="bottom" constant="28" id="Lo2-dZ-PGF"/>
+                                <constraint firstAttribute="bottom" secondItem="xGi-CI-bul" secondAttribute="bottom" id="N7u-Ja-zuj"/>
+                                <constraint firstAttribute="trailing" secondItem="OY9-Jp-yFM" secondAttribute="trailing" constant="20" id="OG5-ul-bRw"/>
+                                <constraint firstItem="ujQ-i4-K7c" firstAttribute="top" secondItem="AEE-qG-AKi" secondAttribute="bottom" constant="12" id="ORP-o7-UfD"/>
+                                <constraint firstItem="0Ih-dW-Phf" firstAttribute="top" secondItem="KZm-qo-Tfv" secondAttribute="bottom" constant="12" id="QaI-RL-0uR"/>
+                                <constraint firstItem="22o-ZD-NtK" firstAttribute="top" secondItem="wa6-xT-Tiw" secondAttribute="top" constant="32" id="SVc-Rf-vau"/>
+                                <constraint firstItem="0Ih-dW-Phf" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="Sm1-sQ-ALS"/>
+                                <constraint firstAttribute="trailing" secondItem="qAk-3Q-zuK" secondAttribute="trailing" constant="20" id="UXV-eQ-DNl"/>
+                                <constraint firstItem="AEE-qG-AKi" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="YR3-2m-C9x"/>
+                                <constraint firstAttribute="trailing" secondItem="lnd-ev-BVA" secondAttribute="trailing" constant="20" id="cUK-eb-Riv"/>
+                                <constraint firstItem="3dJ-yx-BfA" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="det-CS-VZN"/>
+                                <constraint firstItem="3dJ-yx-BfA" firstAttribute="top" secondItem="lnd-ev-BVA" secondAttribute="bottom" constant="8" id="dhV-2P-0wm"/>
+                                <constraint firstItem="qAk-3Q-zuK" firstAttribute="top" secondItem="22o-ZD-NtK" secondAttribute="bottom" constant="28" id="e4R-eF-k3K"/>
+                                <constraint firstItem="IdY-4A-S6M" firstAttribute="top" secondItem="Og3-dW-Qcd" secondAttribute="bottom" constant="28" id="i7V-Al-8yk"/>
+                                <constraint firstItem="NKa-el-vMy" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="igu-uJ-udt"/>
+                                <constraint firstAttribute="trailing" secondItem="3dJ-yx-BfA" secondAttribute="trailing" constant="20" id="kog-Cf-YhH"/>
+                                <constraint firstItem="Og3-dW-Qcd" firstAttribute="top" secondItem="qwl-V6-ESr" secondAttribute="bottom" constant="12" id="leq-px-Ue0"/>
+                                <constraint firstItem="22o-ZD-NtK" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="neg-dD-eHe"/>
+                                <constraint firstItem="Og3-dW-Qcd" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="ooe-ei-wV2"/>
+                                <constraint firstAttribute="trailing" secondItem="qwl-V6-ESr" secondAttribute="trailing" constant="20" id="qNz-7i-vkB"/>
+                                <constraint firstItem="OY9-Jp-yFM" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="qWH-6u-1xN"/>
+                                <constraint firstAttribute="trailing" secondItem="IdY-4A-S6M" secondAttribute="trailing" constant="20" id="tGf-Fa-UqK"/>
+                                <constraint firstAttribute="trailing" secondItem="qTP-bo-Ha5" secondAttribute="trailing" constant="20" id="tc3-Kb-NPB"/>
+                                <constraint firstAttribute="trailing" secondItem="Og3-dW-Qcd" secondAttribute="trailing" constant="20" id="uqk-UM-sru"/>
+                                <constraint firstItem="xGi-CI-bul" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" id="vao-WM-cyG"/>
+                                <constraint firstItem="lnd-ev-BVA" firstAttribute="leading" secondItem="wa6-xT-Tiw" secondAttribute="leading" constant="20" id="w3s-4L-Wxd"/>
+                                <constraint firstAttribute="trailing" secondItem="AEE-qG-AKi" secondAttribute="trailing" constant="20" id="y33-ZF-TMY"/>
+                                <constraint firstAttribute="trailing" secondItem="NKa-el-vMy" secondAttribute="trailing" constant="20" id="yWo-Sk-9mF"/>
+                                <constraint firstItem="qTP-bo-Ha5" firstAttribute="top" secondItem="ujQ-i4-K7c" secondAttribute="bottom" constant="8" id="ye8-pb-Di5"/>
+                                <constraint firstItem="AEE-qG-AKi" firstAttribute="top" secondItem="qAk-3Q-zuK" secondAttribute="bottom" constant="12" id="zb2-26-esT"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="wa6-xT-Tiw" firstAttribute="top" secondItem="3nj-ae-pSN" secondAttribute="top" id="3tR-JT-PKE"/>
+                        <constraint firstAttribute="bottom" secondItem="wa6-xT-Tiw" secondAttribute="bottom" id="R7o-O0-whM"/>
+                        <constraint firstAttribute="trailing" secondItem="wa6-xT-Tiw" secondAttribute="trailing" id="XyU-Tl-apR"/>
+                        <constraint firstItem="wa6-xT-Tiw" firstAttribute="centerX" secondItem="3nj-ae-pSN" secondAttribute="centerX" id="qDC-J7-uFB"/>
+                        <constraint firstItem="wa6-xT-Tiw" firstAttribute="leading" secondItem="3nj-ae-pSN" secondAttribute="leading" id="uYL-eC-rzA"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="JhB-Pj-XQw"/>
+                    </connections>
+                </scrollView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zX-bS-xgS">
+                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="Idb-ll-2ag"/>
+                        <constraint firstAttribute="height" constant="44" id="ho6-Ad-xjE"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" image="menu_button_default.png"/>
+                    <state key="selected" image="menu_button_selected.png"/>
+                    <connections>
+                        <action selector="buttonMenu_TUI:" destination="-1" eventType="touchUpInside" id="MNa-OR-K4A"/>
+                    </connections>
+                </button>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logotype_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mae-Mp-Zld">
+                    <rect key="frame" x="185" y="0.0" width="44" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="Gpu-JJ-gSs"/>
+                        <constraint firstAttribute="height" constant="44" id="hf0-L2-gb6"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0g-06-6RU">
+                    <rect key="frame" x="115" y="260" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="aCl-DM-kpw"/>
+                        <constraint firstAttribute="width" constant="44" id="cUk-GB-5W5"/>
+                    </constraints>
+                    <state key="normal" image="instagram_button_default.png"/>
+                    <connections>
+                        <action selector="instagramButton_TUI:" destination="-1" eventType="touchUpInside" id="0Qv-hX-sDB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VN-8U-2lX">
+                    <rect key="frame" x="185" y="260" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="pdV-VI-ErX"/>
+                        <constraint firstAttribute="width" constant="44" id="wLy-X7-CQU"/>
+                    </constraints>
+                    <state key="normal" image="facebook_button_default.png"/>
+                    <connections>
+                        <action selector="facebookButton_TUI:" destination="-1" eventType="touchUpInside" id="W00-7V-8nB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFD-ri-c5j">
+                    <rect key="frame" x="255" y="260" width="44" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Kd1-Nt-ARb"/>
+                        <constraint firstAttribute="width" constant="44" id="T7C-h5-RwU"/>
+                    </constraints>
+                    <state key="normal" image="mail_button_v_2_default.png"/>
+                    <state key="selected" image="menu_button_selected.png"/>
+                    <state key="highlighted" image="mail_button_v_2_highlighted.png"/>
+                    <connections>
+                        <action selector="emailButton_TUI:" destination="-1" eventType="touchUpInside" id="lgP-Pa-gUh"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="3nj-ae-pSN" firstAttribute="top" secondItem="fjd-p2-tY5" secondAttribute="bottom" id="4PD-3D-qEA"/>
+                <constraint firstAttribute="bottom" secondItem="3nj-ae-pSN" secondAttribute="bottom" id="53D-Pw-eM2"/>
+                <constraint firstItem="mFD-ri-c5j" firstAttribute="leading" secondItem="9VN-8U-2lX" secondAttribute="trailing" constant="26" id="8Vm-14-jOu"/>
+                <constraint firstItem="Mae-Mp-Zld" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Dim-Dq-Ptk"/>
+                <constraint firstAttribute="trailing" secondItem="3nj-ae-pSN" secondAttribute="trailing" id="JH0-mj-lpp"/>
+                <constraint firstItem="mFD-ri-c5j" firstAttribute="centerY" secondItem="9VN-8U-2lX" secondAttribute="centerY" id="KAu-h6-MkJ"/>
+                <constraint firstItem="9VN-8U-2lX" firstAttribute="bottom" secondItem="fjd-p2-tY5" secondAttribute="bottom" constant="22" id="KMV-6H-chb"/>
+                <constraint firstItem="4zX-bS-xgS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LCS-nh-lYE"/>
+                <constraint firstItem="4zX-bS-xgS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="NSx-WZ-IXS"/>
+                <constraint firstItem="3nj-ae-pSN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PAD-YC-Nxt"/>
+                <constraint firstItem="9VN-8U-2lX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UeS-5N-6Nn"/>
+                <constraint firstItem="O0g-06-6RU" firstAttribute="centerY" secondItem="9VN-8U-2lX" secondAttribute="centerY" id="eoh-d5-80C"/>
+                <constraint firstItem="fjd-p2-tY5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iQ0-El-v4j"/>
+                <constraint firstItem="Mae-Mp-Zld" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lYu-iD-st6"/>
+                <constraint firstItem="9VN-8U-2lX" firstAttribute="leading" secondItem="O0g-06-6RU" secondAttribute="trailing" constant="26" id="nQh-Es-rx8"/>
+                <constraint firstItem="fjd-p2-tY5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ptt-GY-5cq"/>
+                <constraint firstAttribute="trailing" secondItem="fjd-p2-tY5" secondAttribute="trailing" id="tdt-JC-mAu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="25" y="580"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="avrora_business_center.jpg" width="849" height="393"/>
+        <image name="facebook_button_default.png" width="34" height="34"/>
+        <image name="instagram_button_default.png" width="34" height="34"/>
+        <image name="logotype_image.png" width="23" height="23"/>
+        <image name="mail_button_v_2_default.png" width="34" height="34"/>
+        <image name="mail_button_v_2_highlighted.png" width="34" height="34"/>
+        <image name="menu_button_default.png" width="15" height="14"/>
+        <image name="menu_button_selected.png" width="15" height="14"/>
+    </resources>
+</document>
