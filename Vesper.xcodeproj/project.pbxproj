@@ -1589,8 +1589,8 @@
 		C78874DC1DEEC80900521AEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-iPad";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-iPad";
 				CODE_SIGN_ENTITLEMENTS = Vesper/Vesper.entitlements;
 				DEVELOPMENT_TEAM = T2J773RMHH;
 				ENABLE_BITCODE = NO;
@@ -1599,21 +1599,22 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Vesper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Yourockdude.Vesper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b566a0f5-b547-46ee-88b7-0bb0de775ce2";
 				PROVISIONING_PROFILE_SPECIFIER = "Vesper Development";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		C78874DD1DEEC80900521AEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-iPad";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-iPad";
 				CODE_SIGN_ENTITLEMENTS = Vesper/Vesper.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = T2J773RMHH;
@@ -1623,13 +1624,14 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Vesper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Yourockdude.Vesper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d6701d84-a765-4047-a7da-faff92c345d0";
 				PROVISIONING_PROFILE_SPECIFIER = "Vesper Distribution";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
