@@ -15,6 +15,8 @@
 
 #import <MapKit/MapKit.h>
 
+#import "VSettings.h"
+
 
 @interface VContactsViewController () <MKMapViewDelegate>
 
@@ -69,11 +71,11 @@
 }
 
 - (BOOL)shouldAutorotate {
-    return NO;
+    return YES;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
+    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
 }
 
 - (void)localize {
@@ -104,52 +106,64 @@
     return annotationView;
 }
 
+- (void)openURL:(NSString *)URL {
+    if (SYSTEM_VERSION_GRATER_THAN_OR_EQUAL_TO(@"10.0")) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]
+                                           options:@{}
+                                 completionHandler:^(BOOL success) {
+                                     //
+                                 }];
+    } else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
+    }
+}
+
 - (void)makeCallWithTelephoneNumber:(NSString *)number {
     NSString *format = [NSString stringWithFormat:@"tel:%@", number];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:format]
-                                       options:@{}
-                             completionHandler:^(BOOL success) {
-                                 //
-                             }];
+    [self openURL:format];
 }
 
 - (void)sendMailToEmail:(NSString *)email {
     NSString *URL = [NSString stringWithFormat:@"mailto:%@?subject=Vesper&body=%@", email, @""];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]
-                                       options:@{}
-                             completionHandler:^(BOOL success) {
-                                 //
-                             }];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]
+//                                       options:@{}
+//                             completionHandler:^(BOOL success) {
+//                                 //
+//                             }];
+    [self openURL:URL];
+
 }
 
 - (IBAction)instagramButton_TUI:(UIButton *)sender {
     NSString *string = @"instagram://user?username=vesper_moscow";
-    NSURL *URL = [NSURL URLWithString:string];
-    if (![[UIApplication sharedApplication] canOpenURL:URL]) {
+//    NSURL *URL = [NSURL URLWithString:string];
+    if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:string]]) {
         NSLog(@"Open browser;");
         string = @"https://www.instagram.com/vesper_moscow/";
-        URL = [NSURL URLWithString:string];
+//        URL = [NSURL URLWithString:string];
     }
-    [[UIApplication sharedApplication] openURL:URL
-                                       options:@{}
-                             completionHandler:^(BOOL success) {
-                                 //
-                             }];
+//    [[UIApplication sharedApplication] openURL:URL
+//                                       options:@{}
+//                             completionHandler:^(BOOL success) {
+//                                 //
+//                             }];
+    [self openURL:string];
 }
 
 - (IBAction)facebookButton_TUI:(UIButton *)sender {
     NSString *string = @"fb://profile/VesperMoscowApartments";
-    NSURL *URL = [NSURL URLWithString:string];
-    if (![[UIApplication sharedApplication] canOpenURL:URL]) {
+//    NSURL *URL = [NSURL URLWithString:string];
+    if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:string]]) {
         NSLog(@"Open browser;");
         string = @"https://www.facebook.com/VesperMoscowApartments/";
-        URL = [NSURL URLWithString:string];
+//        URL = [NSURL URLWithString:string];
     }
-    [[UIApplication sharedApplication] openURL:URL
-                                       options:@{}
-                             completionHandler:^(BOOL success) {
-                                 //
-                             }];
+//    [[UIApplication sharedApplication] openURL:URL
+//                                       options:@{}
+//                             completionHandler:^(BOOL success) {
+//                                 //
+//                             }];
+    [self openURL:string];
 }
 
 - (IBAction)telephone_1_Button_TUI:(UIButton *)sender {

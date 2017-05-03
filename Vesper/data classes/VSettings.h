@@ -12,6 +12,10 @@
 #import "VObject.h"
 
 
+#define SYSTEM_VERSION_GRATER_THAN_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_GRATER_THAN_OR_EQUAL_TO_IOS_10 ([[[UIDevice currentDevice] systemVersion] compare:@"10.0" options:NSNumericSearch] != NSOrderedAscending)
+
+
 @protocol VSettingDelegate <NSObject>
 
 @optional

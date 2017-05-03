@@ -133,6 +133,8 @@
 
 - (void)registerForNotifications {
     NSLog(@"Try to register for remote notifications;");
+    if (SYSTEM_VERSION_GRATER_THAN_OR_EQUAL_TO(@"10.0")) {
+        NSLog(@"iOS 10.0");
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     center.delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
@@ -144,6 +146,12 @@
                                   });
                               }
                           }];
+    } else {
+        NSLog(@"iOS 9.3 or later");
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge)
+                                                                                                              categories:nil]];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
 }
 
 - (void)showProgressBar {

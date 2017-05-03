@@ -54,11 +54,11 @@
 }
 
 - (BOOL)shouldAutorotate {
-    return NO;
+    return YES;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
+    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
 }
 
 - (void)setup {
@@ -70,14 +70,14 @@
     [_text_1_Label setText:LOCALIZE(@"about_us_1_text")];
     [_text_2_Label setText:LOCALIZE(@"about_us_2_text")];
     [_popularPlacesLabel setText:LOCALIZE(@"popular_places")];
-    [_constraint setConstant:95.f * objects.count];
+    [_constraint setConstant:174.f * objects.count];
     for (NSUInteger i = 0; i <= objects.count - 1; i++) {
         if (objects.count > 0) {
-            VPlacesView *place = [[VPlacesView alloc] initWithFrame:CGRectMake(0.f, 95.f * i, SCREEN_WIDTH, 95.f)];
+            VPlacesView *place = [[VPlacesView alloc] initWithFrame:CGRectMake(0.f, 174.f * i, SCREEN_WIDTH, 174.f)];
             [place setDelegate:self];
             place.index = i;
             [place setImageURL:objects[i].photos.firstObject];
-            [place.label setText:objects[i].name];
+            [place.label setText:[NSString stringWithFormat:@"%@\n%@", objects[i].address, objects[i].name]];
             [_places addObject:place];
             [_placesView addSubview:_places[i]];
         }

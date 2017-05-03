@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -32,13 +32,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FILTER" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuQ-RV-Gi1">
-                    <rect key="frame" x="151.5" y="30" width="72" height="24"/>
+                    <rect key="frame" x="152" y="30" width="72" height="24"/>
                     <fontDescription key="fontDescription" name="Acrom-Bold" family="Acrom" pointSize="20"/>
                     <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GNc-2f-6gH">
-                    <rect key="frame" x="22" y="76" width="331" height="72"/>
+                    <rect key="frame" x="32" y="76" width="311" height="72"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="72" id="5n2-wi-hW7"/>
                     </constraints>
@@ -53,7 +53,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0fg-7d-qh4">
-                    <rect key="frame" x="22" y="148" width="331" height="72"/>
+                    <rect key="frame" x="32" y="148" width="311" height="72"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="72" id="U6U-hk-o1Z"/>
                     </constraints>
@@ -103,12 +103,12 @@
                 <constraint firstItem="i50-MG-WiW" firstAttribute="top" secondItem="iDY-cP-WAC" secondAttribute="bottom" constant="8" id="Dja-Cb-3gz"/>
                 <constraint firstItem="0fg-7d-qh4" firstAttribute="top" secondItem="GNc-2f-6gH" secondAttribute="bottom" id="H2d-yd-dcJ"/>
                 <constraint firstItem="iDY-cP-WAC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="LV3-1F-cyW"/>
-                <constraint firstItem="GNc-2f-6gH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="22" id="LtF-RU-SZK"/>
+                <constraint firstItem="GNc-2f-6gH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="LtF-RU-SZK"/>
                 <constraint firstItem="i50-MG-WiW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ps0-Ir-bvl"/>
-                <constraint firstAttribute="trailing" secondItem="GNc-2f-6gH" secondAttribute="trailing" constant="22" id="RRd-9u-C3O"/>
+                <constraint firstAttribute="trailing" secondItem="GNc-2f-6gH" secondAttribute="trailing" constant="32" id="RRd-9u-C3O"/>
                 <constraint firstItem="GNc-2f-6gH" firstAttribute="top" secondItem="OuQ-RV-Gi1" secondAttribute="bottom" constant="22" id="gNc-1A-Zm2"/>
-                <constraint firstAttribute="trailing" secondItem="0fg-7d-qh4" secondAttribute="trailing" constant="22" id="kzj-eq-PqM"/>
-                <constraint firstItem="0fg-7d-qh4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="22" id="n3p-VE-hTz"/>
+                <constraint firstAttribute="trailing" secondItem="0fg-7d-qh4" secondAttribute="trailing" constant="32" id="kzj-eq-PqM"/>
+                <constraint firstItem="0fg-7d-qh4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="n3p-VE-hTz"/>
                 <constraint firstItem="iDY-cP-WAC" firstAttribute="top" secondItem="0fg-7d-qh4" secondAttribute="bottom" constant="22" id="rdU-JG-FO4"/>
                 <constraint firstItem="GNc-2f-6gH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tAe-Dh-KUM"/>
                 <constraint firstItem="OuQ-RV-Gi1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="v9m-7x-oI0"/>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -22,14 +23,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VObjectInfoViewController">
             <connections>
-                <outlet property="accordionLC" destination="1ol-hL-SWf" id="qE4-fi-6mq"/>
                 <outlet property="addressLabel" destination="Zva-P2-67i" id="Izj-qb-uEp"/>
                 <outlet property="apartmentCountValueLabel" destination="y6n-yJ-jTw" id="Ns8-fD-RAs"/>
                 <outlet property="apartmentsCount" destination="APW-kG-Gh4" id="bxp-ww-C0K"/>
                 <outlet property="backButton" destination="dZZ-5r-a15" id="qTL-me-9RT"/>
                 <outlet property="carouselContentView" destination="8rN-s5-Wpb" id="wyi-9Q-W1Q"/>
-                <outlet property="descriptionLabel" destination="l4X-YE-K27" id="GZW-hM-89y"/>
+                <outlet property="descriptionLabel" destination="l4X-YE-K27" id="XH9-l5-D9r"/>
                 <outlet property="infoContentView" destination="ay0-un-6pd" id="fxn-s1-MZ8"/>
+                <outlet property="mapView" destination="6Kz-AN-AhE" id="LYJ-u4-jSP"/>
+                <outlet property="markDescriptionLabel" destination="9c6-hQ-HUj" id="T3T-wR-qiG"/>
+                <outlet property="markLocationLabel" destination="tn1-BV-tLe" id="iTc-Bc-le4"/>
+                <outlet property="markTeamLabel" destination="wNY-T3-oL1" id="uy1-sD-sB5"/>
                 <outlet property="moreInfoContentView" destination="ttE-1x-I7y" id="2ko-Qp-fxU"/>
                 <outlet property="optionsContentView" destination="oAy-Po-Qej" id="f97-EV-I0n"/>
                 <outlet property="orangeLineView" destination="D56-RG-P4y" id="Yac-mY-4hZ"/>
@@ -43,19 +47,22 @@
                 <outlet property="squareLabel" destination="1Ia-4y-Ddb" id="7fA-ab-YRi"/>
                 <outlet property="squareValueLabel" destination="bd8-d9-sHA" id="suw-Ai-3hK"/>
                 <outlet property="titleLabel" destination="QYi-bj-Ld2" id="iC2-g4-lCn"/>
+                <outlet property="valueDescriptionLabel" destination="Qyf-3x-4GN" id="oIq-TM-9DE"/>
+                <outlet property="valueLocationLabel" destination="vnn-Jx-vWw" id="Q43-Dg-xZV"/>
+                <outlet property="valueTeamLabel" destination="5zM-Y1-gMD" id="vCA-I2-INS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="2000"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rN-s5-Wpb">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="282"/>
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="452"/>
                     <subviews>
                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="IWl-l9-frl">
-                            <rect key="frame" x="160" y="245" width="55" height="37"/>
+                            <rect key="frame" x="484.5" y="415" width="55" height="37"/>
                             <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="currentPageIndicatorTintColor" red="0.64313725489999995" green="0.31372549020000001" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                         </pageControl>
@@ -64,77 +71,76 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="IWl-l9-frl" secondAttribute="bottom" id="Io9-Xg-vF7"/>
                         <constraint firstItem="IWl-l9-frl" firstAttribute="centerX" secondItem="8rN-s5-Wpb" secondAttribute="centerX" id="LSV-6l-V90"/>
-                        <constraint firstAttribute="height" constant="282" id="oN2-No-IfP"/>
+                        <constraint firstAttribute="height" constant="452" id="oN2-No-IfP"/>
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hro-FM-NOx">
-                    <rect key="frame" x="0.0" y="282" width="375" height="1718"/>
+                    <rect key="frame" x="0.0" y="452" width="1024" height="1548"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ay0-un-6pd">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="411.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="309"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYi-bj-Ld2">
-                                    <rect key="frame" x="20" y="28" width="327" height="48"/>
-                                    <fontDescription key="fontDescription" name="Acrom-Bold" family="Acrom" pointSize="40"/>
+                                    <rect key="frame" x="40" y="28" width="956" height="60"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Bold" family="Acrom" pointSize="50"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zva-P2-67i">
-                                    <rect key="frame" x="28" y="90" width="319" height="19"/>
-                                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="16"/>
+                                    <rect key="frame" x="40" y="102" width="459" height="29"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="24"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D56-RG-P4y">
-                                    <rect key="frame" x="28" y="137" width="6" height="96.5"/>
+                                    <rect key="frame" x="40" y="159" width="6" height="79.5"/>
                                     <color key="backgroundColor" red="0.64313725489999995" green="0.31372549020000001" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="6" id="JyK-PP-G1N"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4X-YE-K27">
-                                    <rect key="frame" x="52" y="137" width="295" height="96.5"/>
-                                    <string key="text">Lorum ipsum description text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</string>
-                                    <fontDescription key="fontDescription" name="Acrom-Light" family="Acrom" pointSize="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorum ipsum description text text text text text text text text text text text text text text text text text text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4X-YE-K27">
+                                    <rect key="frame" x="64" y="159" width="435" height="79.5"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Light" family="Acrom" pointSize="22"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAy-Po-Qej">
-                                    <rect key="frame" x="0.0" y="261.5" width="375" height="150"/>
+                                    <rect key="frame" x="518.5" y="159" width="465.5" height="150"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqH-pc-huq">
-                                            <rect key="frame" x="28" y="26.5" width="52" height="19"/>
-                                            <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="16"/>
+                                            <rect key="frame" x="28" y="19" width="65" height="24"/>
+                                            <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="20"/>
                                             <color key="textColor" red="0.10980392160000001" green="0.1176470588" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY4-Nj-4hN">
-                                            <rect key="frame" x="301.5" y="26.5" width="45.5" height="19"/>
-                                            <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="16"/>
+                                            <rect key="frame" x="380.5" y="19" width="57" height="24"/>
+                                            <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="20"/>
                                             <color key="textColor" red="0.10980392160000001" green="0.1176470588" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bd8-d9-sHA">
-                                            <rect key="frame" x="301.5" y="65.5" width="45.5" height="19"/>
-                                            <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="16"/>
+                                            <rect key="frame" x="380.5" y="63" width="57" height="24"/>
+                                            <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="20"/>
                                             <color key="textColor" red="0.10980392160000001" green="0.1176470588" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Square" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ia-4y-Ddb">
-                                            <rect key="frame" x="28" y="65.5" width="59" height="19"/>
-                                            <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="16"/>
+                                            <rect key="frame" x="28" y="63" width="73.5" height="24"/>
+                                            <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="20"/>
                                             <color key="textColor" red="0.10980392156862745" green="0.11764705882352941" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apartments count" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APW-kG-Gh4">
-                                            <rect key="frame" x="28" y="104.5" width="146.5" height="19"/>
-                                            <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="16"/>
+                                            <rect key="frame" x="28" y="107" width="183" height="24"/>
+                                            <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="20"/>
                                             <color key="textColor" red="0.10980392160000001" green="0.1176470588" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6n-yJ-jTw">
-                                            <rect key="frame" x="301.5" y="104.5" width="45.5" height="19"/>
-                                            <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="16"/>
+                                            <rect key="frame" x="380.5" y="107" width="57" height="24"/>
+                                            <fontDescription key="fontDescription" name="Acrom-Medium" family="Acrom" pointSize="20"/>
                                             <color key="textColor" red="0.10980392160000001" green="0.1176470588" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -156,36 +162,144 @@
                                         <constraint firstItem="APW-kG-Gh4" firstAttribute="top" secondItem="1Ia-4y-Ddb" secondAttribute="bottom" constant="20" id="yyT-vq-PxQ"/>
                                     </constraints>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ojT-Kf-C7T">
+                                    <rect key="frame" x="518" y="94" width="466" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="inl-rO-ehI"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Acrom-Light" family="Acrom" pointSize="20"/>
+                                    <inset key="titleEdgeInsets" minX="28" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="www.test.com">
+                                        <color key="titleColor" red="0.64313725490196072" green="0.31372549019607843" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="site_2_ButtonTUI:" destination="-1" eventType="touchUpInside" id="lpU-cG-yGZ"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="Zva-P2-67i" secondAttribute="trailing" constant="28" id="2FR-aw-MYJ"/>
+                                <constraint firstItem="Zva-P2-67i" firstAttribute="trailing" secondItem="l4X-YE-K27" secondAttribute="trailing" id="0Ya-Qb-Gxf"/>
                                 <constraint firstAttribute="bottom" secondItem="oAy-Po-Qej" secondAttribute="bottom" id="2xB-Um-aqh"/>
+                                <constraint firstItem="Zva-P2-67i" firstAttribute="leading" secondItem="QYi-bj-Ld2" secondAttribute="leading" id="3nw-Rf-BJD"/>
                                 <constraint firstItem="D56-RG-P4y" firstAttribute="height" secondItem="l4X-YE-K27" secondAttribute="height" id="6el-Tu-e6g"/>
                                 <constraint firstItem="Zva-P2-67i" firstAttribute="top" secondItem="QYi-bj-Ld2" secondAttribute="bottom" constant="14" id="Aqd-f6-INH"/>
-                                <constraint firstAttribute="trailing" secondItem="oAy-Po-Qej" secondAttribute="trailing" id="O1K-Jn-xjl"/>
+                                <constraint firstAttribute="trailing" secondItem="oAy-Po-Qej" secondAttribute="trailing" constant="40" id="O1K-Jn-xjl"/>
                                 <constraint firstItem="D56-RG-P4y" firstAttribute="top" secondItem="Zva-P2-67i" secondAttribute="bottom" constant="28" id="OuT-4U-giM"/>
                                 <constraint firstItem="QYi-bj-Ld2" firstAttribute="top" secondItem="ay0-un-6pd" secondAttribute="top" constant="28" id="Rnf-nr-TDh"/>
                                 <constraint firstItem="l4X-YE-K27" firstAttribute="leading" secondItem="D56-RG-P4y" secondAttribute="trailing" constant="18" id="X9w-Th-R0s"/>
-                                <constraint firstAttribute="trailing" secondItem="l4X-YE-K27" secondAttribute="trailing" constant="28" id="Zyp-7b-983"/>
                                 <constraint firstAttribute="trailing" secondItem="QYi-bj-Ld2" secondAttribute="trailing" constant="28" id="aLI-hq-JCn"/>
-                                <constraint firstItem="D56-RG-P4y" firstAttribute="leading" secondItem="ay0-un-6pd" secondAttribute="leading" constant="28" id="bVC-0h-x5Q"/>
-                                <constraint firstItem="Zva-P2-67i" firstAttribute="leading" secondItem="ay0-un-6pd" secondAttribute="leading" constant="28" id="dt3-i2-ujq"/>
-                                <constraint firstItem="oAy-Po-Qej" firstAttribute="top" secondItem="l4X-YE-K27" secondAttribute="bottom" constant="28" id="j1u-X7-US2"/>
-                                <constraint firstItem="oAy-Po-Qej" firstAttribute="leading" secondItem="ay0-un-6pd" secondAttribute="leading" id="o9Q-Ct-aQB"/>
+                                <constraint firstItem="oAy-Po-Qej" firstAttribute="top" secondItem="D56-RG-P4y" secondAttribute="top" id="ari-h0-uyY"/>
+                                <constraint firstItem="ojT-Kf-C7T" firstAttribute="trailing" secondItem="oAy-Po-Qej" secondAttribute="trailing" id="dq5-uz-Jdp"/>
+                                <constraint firstItem="oAy-Po-Qej" firstAttribute="leading" secondItem="l4X-YE-K27" secondAttribute="trailing" constant="20" id="fDR-N6-1FQ"/>
+                                <constraint firstItem="ojT-Kf-C7T" firstAttribute="leading" secondItem="oAy-Po-Qej" secondAttribute="leading" id="gDR-xz-lo9"/>
+                                <constraint firstItem="D56-RG-P4y" firstAttribute="leading" secondItem="Zva-P2-67i" secondAttribute="leading" id="ldJ-TB-NgR"/>
                                 <constraint firstItem="l4X-YE-K27" firstAttribute="top" secondItem="Zva-P2-67i" secondAttribute="bottom" constant="28" id="oJx-PB-aEb"/>
-                                <constraint firstItem="QYi-bj-Ld2" firstAttribute="leading" secondItem="ay0-un-6pd" secondAttribute="leading" constant="20" id="xo1-Rg-gq4"/>
+                                <constraint firstItem="ojT-Kf-C7T" firstAttribute="centerY" secondItem="Zva-P2-67i" secondAttribute="centerY" id="oxN-uy-RHr"/>
+                                <constraint firstItem="QYi-bj-Ld2" firstAttribute="leading" secondItem="ay0-un-6pd" secondAttribute="leading" constant="40" id="xo1-Rg-gq4"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttE-1x-I7y">
-                            <rect key="frame" x="0.0" y="411.5" width="375" height="1000"/>
+                            <rect key="frame" x="0.0" y="325" width="1024" height="871"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9c6-hQ-HUj">
+                                    <rect key="frame" x="40" y="16" width="61.5" height="26.5"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Bold" family="Acrom" pointSize="22"/>
+                                    <color key="textColor" red="0.64313725489999995" green="0.31372549020000001" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3JR-Zu-ypr">
+                                    <rect key="frame" x="117.5" y="29" width="866.5" height="1"/>
+                                    <color key="backgroundColor" red="0.22745098039215686" green="0.22745098039215686" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="BFE-kw-3kr"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="due-D1-gLI">
+                                    <rect key="frame" x="117.5" y="119.5" width="866.5" height="1"/>
+                                    <color key="backgroundColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="3Rz-rV-1ml"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tn1-BV-tLe">
+                                    <rect key="frame" x="40" y="106.5" width="61.5" height="26.5"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Bold" family="Acrom" pointSize="22"/>
+                                    <color key="textColor" red="0.64313725489999995" green="0.31372549020000001" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyf-3x-4GN">
+                                    <rect key="frame" x="40" y="62.5" width="944" height="24"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Light" family="Acrom" pointSize="20"/>
+                                    <color key="textColor" red="0.82352941176470584" green="0.82352941176470584" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnn-Jx-vWw">
+                                    <rect key="frame" x="40" y="153" width="944" height="24"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Light" family="Acrom" pointSize="20"/>
+                                    <color key="textColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kz-AN-AhE">
+                                    <rect key="frame" x="0.0" y="197" width="1024" height="564"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="564" id="YXs-Ih-M9v"/>
+                                    </constraints>
+                                </mapView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-T3-oL1">
+                                    <rect key="frame" x="40" y="781" width="61.5" height="26.5"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Bold" family="Acrom" pointSize="22"/>
+                                    <color key="textColor" red="0.64313725489999995" green="0.31372549020000001" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRy-BS-okp">
+                                    <rect key="frame" x="117.5" y="794" width="866.5" height="1"/>
+                                    <color key="backgroundColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="Us7-Lk-RiB"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zM-Y1-gMD">
+                                    <rect key="frame" x="40" y="827" width="944" height="24"/>
+                                    <fontDescription key="fontDescription" name="Acrom-Light" family="Acrom" pointSize="20"/>
+                                    <color key="textColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="1000" id="1ol-hL-SWf"/>
+                                <constraint firstItem="Qyf-3x-4GN" firstAttribute="trailing" secondItem="3JR-Zu-ypr" secondAttribute="trailing" id="26F-I2-aJZ"/>
+                                <constraint firstItem="HRy-BS-okp" firstAttribute="trailing" secondItem="due-D1-gLI" secondAttribute="trailing" id="8uN-vo-62C"/>
+                                <constraint firstItem="5zM-Y1-gMD" firstAttribute="trailing" secondItem="HRy-BS-okp" secondAttribute="trailing" id="ANA-f1-cbA"/>
+                                <constraint firstItem="6Kz-AN-AhE" firstAttribute="top" secondItem="vnn-Jx-vWw" secondAttribute="bottom" constant="20" id="CNe-YH-2ZH"/>
+                                <constraint firstItem="3JR-Zu-ypr" firstAttribute="centerY" secondItem="9c6-hQ-HUj" secondAttribute="centerY" id="DNV-MG-boa"/>
+                                <constraint firstItem="tn1-BV-tLe" firstAttribute="top" secondItem="Qyf-3x-4GN" secondAttribute="bottom" constant="20" id="Df6-zc-c38"/>
+                                <constraint firstAttribute="bottom" secondItem="5zM-Y1-gMD" secondAttribute="bottom" constant="20" id="EIW-xv-huJ"/>
+                                <constraint firstItem="tn1-BV-tLe" firstAttribute="leading" secondItem="Qyf-3x-4GN" secondAttribute="leading" id="Eo2-l3-THV"/>
+                                <constraint firstItem="9c6-hQ-HUj" firstAttribute="top" secondItem="ttE-1x-I7y" secondAttribute="top" constant="16" id="FlX-GM-kyy"/>
+                                <constraint firstItem="HRy-BS-okp" firstAttribute="leading" secondItem="wNY-T3-oL1" secondAttribute="trailing" constant="16" id="FoM-iD-i4I"/>
+                                <constraint firstAttribute="trailing" secondItem="3JR-Zu-ypr" secondAttribute="trailing" constant="40" id="GRd-QG-VtI"/>
+                                <constraint firstItem="Qyf-3x-4GN" firstAttribute="leading" secondItem="9c6-hQ-HUj" secondAttribute="leading" id="HCp-SV-nLv"/>
+                                <constraint firstItem="5zM-Y1-gMD" firstAttribute="top" secondItem="wNY-T3-oL1" secondAttribute="bottom" constant="20" id="Mp7-v5-JBZ"/>
+                                <constraint firstItem="due-D1-gLI" firstAttribute="centerY" secondItem="tn1-BV-tLe" secondAttribute="centerY" id="Osw-fy-KVJ"/>
+                                <constraint firstItem="vnn-Jx-vWw" firstAttribute="trailing" secondItem="due-D1-gLI" secondAttribute="trailing" id="RmM-ud-mkr"/>
+                                <constraint firstItem="HRy-BS-okp" firstAttribute="centerY" secondItem="wNY-T3-oL1" secondAttribute="centerY" id="Xog-ET-U8N"/>
+                                <constraint firstItem="3JR-Zu-ypr" firstAttribute="leading" secondItem="9c6-hQ-HUj" secondAttribute="trailing" constant="16" id="eNk-qW-P9n"/>
+                                <constraint firstItem="5zM-Y1-gMD" firstAttribute="leading" secondItem="wNY-T3-oL1" secondAttribute="leading" id="evZ-8l-b5I"/>
+                                <constraint firstItem="wNY-T3-oL1" firstAttribute="leading" secondItem="vnn-Jx-vWw" secondAttribute="leading" id="fvC-gC-V0O"/>
+                                <constraint firstItem="Qyf-3x-4GN" firstAttribute="top" secondItem="9c6-hQ-HUj" secondAttribute="bottom" constant="20" id="gaI-Zi-QRm"/>
+                                <constraint firstItem="wNY-T3-oL1" firstAttribute="top" secondItem="6Kz-AN-AhE" secondAttribute="bottom" constant="20" id="hHB-Ws-rnH"/>
+                                <constraint firstItem="due-D1-gLI" firstAttribute="trailing" secondItem="3JR-Zu-ypr" secondAttribute="trailing" id="jVW-rM-dQe"/>
+                                <constraint firstItem="9c6-hQ-HUj" firstAttribute="leading" secondItem="ttE-1x-I7y" secondAttribute="leading" constant="40" id="jWY-XH-oA0"/>
+                                <constraint firstItem="6Kz-AN-AhE" firstAttribute="leading" secondItem="ttE-1x-I7y" secondAttribute="leading" id="kaS-sb-ENK"/>
+                                <constraint firstItem="vnn-Jx-vWw" firstAttribute="top" secondItem="tn1-BV-tLe" secondAttribute="bottom" constant="20" id="n88-wy-yWG"/>
+                                <constraint firstAttribute="trailing" secondItem="6Kz-AN-AhE" secondAttribute="trailing" id="qY2-3R-qbq"/>
+                                <constraint firstItem="due-D1-gLI" firstAttribute="leading" secondItem="tn1-BV-tLe" secondAttribute="trailing" constant="16" id="u80-Km-yyU"/>
+                                <constraint firstItem="vnn-Jx-vWw" firstAttribute="leading" secondItem="tn1-BV-tLe" secondAttribute="leading" id="wMe-XF-zx6"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BBI-5a-JSL">
-                            <rect key="frame" x="0.0" y="1439.5" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="1224" width="1024" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="u6b-kz-dGc"/>
                             </constraints>
@@ -197,36 +311,20 @@
                                 <action selector="site_1_ButtonTUI:" destination="-1" eventType="touchUpInside" id="b9l-1l-ytM"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ojT-Kf-C7T">
-                            <rect key="frame" x="8" y="1491.5" width="359" height="44"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="inl-rO-ehI"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Acrom-Light" family="Acrom" pointSize="18"/>
-                            <state key="normal" title="www.test.com">
-                                <color key="titleColor" red="0.64313725490196072" green="0.31372549019607843" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="site_2_ButtonTUI:" destination="-1" eventType="touchUpInside" id="lpU-cG-yGZ"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="ttE-1x-I7y" firstAttribute="centerX" secondItem="hro-FM-NOx" secondAttribute="centerX" id="Doa-UW-Zzk"/>
+                        <constraint firstItem="ttE-1x-I7y" firstAttribute="top" secondItem="ay0-un-6pd" secondAttribute="bottom" constant="16" id="FNa-LV-JU1"/>
                         <constraint firstItem="ay0-un-6pd" firstAttribute="leading" secondItem="hro-FM-NOx" secondAttribute="leading" id="I67-mE-nSh"/>
                         <constraint firstAttribute="trailing" secondItem="ttE-1x-I7y" secondAttribute="trailing" id="KOO-6H-5gX"/>
-                        <constraint firstItem="ttE-1x-I7y" firstAttribute="top" secondItem="ay0-un-6pd" secondAttribute="bottom" id="KbQ-n6-RDH"/>
                         <constraint firstItem="ay0-un-6pd" firstAttribute="centerX" secondItem="hro-FM-NOx" secondAttribute="centerX" id="Ol0-i8-xmx"/>
                         <constraint firstItem="BBI-5a-JSL" firstAttribute="leading" secondItem="hro-FM-NOx" secondAttribute="leading" id="Qcn-OG-yCb"/>
-                        <constraint firstAttribute="trailing" secondItem="ojT-Kf-C7T" secondAttribute="trailing" constant="8" id="R2u-rl-b47"/>
                         <constraint firstItem="BBI-5a-JSL" firstAttribute="top" secondItem="ttE-1x-I7y" secondAttribute="bottom" constant="28" id="SZv-7c-fRi"/>
                         <constraint firstItem="ttE-1x-I7y" firstAttribute="leading" secondItem="hro-FM-NOx" secondAttribute="leading" id="Sye-D5-iQ1"/>
-                        <constraint firstAttribute="bottom" secondItem="ojT-Kf-C7T" secondAttribute="bottom" constant="28" id="Tia-I2-cWN"/>
-                        <constraint firstItem="ojT-Kf-C7T" firstAttribute="leading" secondItem="hro-FM-NOx" secondAttribute="leading" constant="8" id="TwT-M2-MEG"/>
+                        <constraint firstAttribute="bottom" secondItem="BBI-5a-JSL" secondAttribute="bottom" constant="28" id="XxV-H2-bbc"/>
                         <constraint firstAttribute="trailing" secondItem="BBI-5a-JSL" secondAttribute="trailing" id="e7Z-PJ-PxC"/>
                         <constraint firstAttribute="trailing" secondItem="ay0-un-6pd" secondAttribute="trailing" id="k26-zP-udJ"/>
-                        <constraint firstItem="ojT-Kf-C7T" firstAttribute="top" secondItem="BBI-5a-JSL" secondAttribute="bottom" constant="8" id="rcG-x1-I7a"/>
                         <constraint firstItem="ay0-un-6pd" firstAttribute="top" secondItem="hro-FM-NOx" secondAttribute="top" id="siB-YA-ho6"/>
                     </constraints>
                 </scrollView>
@@ -244,7 +342,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQ6-eQ-Dbd">
-                    <rect key="frame" x="331" y="0.0" width="44" height="44"/>
+                    <rect key="frame" x="980" y="0.0" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="ayK-tc-lpe"/>
                         <constraint firstAttribute="width" constant="44" id="jxY-4S-CGG"/>
@@ -267,12 +365,13 @@
                 <constraint firstAttribute="trailing" secondItem="hro-FM-NOx" secondAttribute="trailing" id="LW3-mz-ehK"/>
                 <constraint firstItem="dZZ-5r-a15" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bTs-2s-FPG"/>
                 <constraint firstAttribute="trailing" secondItem="MQ6-eQ-Dbd" secondAttribute="trailing" id="bdl-6d-MZS"/>
+                <constraint firstItem="oAy-Po-Qej" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1:2.2" id="hNA-o1-Obq"/>
                 <constraint firstItem="8rN-s5-Wpb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lhP-sl-aAc"/>
                 <constraint firstAttribute="trailing" secondItem="8rN-s5-Wpb" secondAttribute="trailing" id="o8a-7X-5YZ"/>
                 <constraint firstItem="hro-FM-NOx" firstAttribute="top" secondItem="8rN-s5-Wpb" secondAttribute="bottom" id="ono-Zg-4jC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="30.5" y="220"/>
+            <point key="canvasLocation" x="30" y="951"/>
         </view>
     </objects>
     <resources>

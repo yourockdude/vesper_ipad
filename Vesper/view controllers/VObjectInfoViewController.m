@@ -38,7 +38,10 @@
 #import "Timer.h"
 
 
-@interface VObjectInfoViewController () <iCarouselDelegate, iCarouselDataSource, VAccordionControlFunctionsDelegate, VAccordionControlVisualDelegate, AccordionViewDelegate, VShareViewDelegate, VTeamViewDelegate, MFMessageComposeViewControllerDelegate, VPhotoesViewControllerDelegate>
+#import <MapKit/MapKit.h>
+
+
+@interface VObjectInfoViewController () <iCarouselDelegate, iCarouselDataSource, /*VAccordionControlFunctionsDelegate, VAccordionControlVisualDelegate, AccordionViewDelegate,*/ VShareViewDelegate, MFMessageComposeViewControllerDelegate, VPhotoesViewControllerDelegate, MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -48,21 +51,21 @@
 
 @property (strong, nonatomic) iCarousel *carouselView;
 
-@property (strong, nonatomic) AccordionView *accordionView;
+//@property (strong, nonatomic) AccordionView *accordionView;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *accordionLC;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *accordionLC;
 
 @property (strong, nonatomic) VShareView *shareView;
 
 @property (strong, nonatomic) CALayer *layer;
 
-@property (strong, nonatomic) VDescriptionView *descriptionView;
-@property (strong, nonatomic) VLocationView *locationView;
-@property (strong, nonatomic) VTeamView *teamView;
+//@property (strong, nonatomic) VDescriptionView *descriptionView;
+//@property (strong, nonatomic) VLocationView *locationView;
+//@property (strong, nonatomic) VTeamView *teamView;
 
-@property (assign, nonatomic) CGFloat descriptionHeight;
-@property (assign, nonatomic) CGFloat locationHeight;
-@property (assign, nonatomic) CGFloat teamHeight;
+//@property (assign, nonatomic) CGFloat descriptionHeight;
+//@property (assign, nonatomic) CGFloat locationHeight;
+//@property (assign, nonatomic) CGFloat teamHeight;
 
 @property (strong, nonatomic) VObject *object;
 
@@ -77,6 +80,16 @@
 @property (weak, nonatomic) IBOutlet UIButton *site_2_Button;
 
 @property (strong, nonatomic) VMessageViewController *messageVC;
+
+@property (weak, nonatomic) IBOutlet UILabel *markDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *markLocationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *markTeamLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *valueDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *valueLocationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *valueTeamLabel;
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -93,6 +106,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_site_2_Button setAlpha:0.f];
     [self buttonsSetup];
     [self fillObject];
     CGRect frame = CGRectMake(0.f, 0.f, SCREEN_WIDTH, _carouselContentView.frame.size.height);
@@ -108,59 +122,73 @@
     layer.backgroundColor = [UIColor blackColor].CGColor;
     [layer setOpacity:.348f];
     [_carouselView.layer addSublayer:layer];
-    [_accordionLC setConstant:3 * 84.f];
-    _accordionView = [[AccordionView alloc] initWithFrame:CGRectMake(0.f, 0.f, SCREEN_WIDTH, FLT_MAX)];
-    VAccordionControl *accordionControl1 = [[VAccordionControl alloc] initWithFrame:CGRectMake(0.f, 0.f, 0.f, 84.f)
-                                                                          withTitle:LOCALIZE(@"description")];
-    VAccordionControl *accordionControl2 = [[VAccordionControl alloc] initWithFrame:CGRectMake(0.f, 0.f, 0.f, 84.f)
-                                                                          withTitle:LOCALIZE(@"location")];
-    VAccordionControl *accordionControl3 = [[VAccordionControl alloc] initWithFrame:CGRectMake(0.f, 0.f, 0.f, 84.f)
-                                                                          withTitle:LOCALIZE(@"team")];
-    [accordionControl1 setVisualDelegate:self];
-    [accordionControl2 setVisualDelegate:self];
-    [accordionControl3 setVisualDelegate:self];
-    [_accordionView setDelegate:self];
-    _descriptionView = [[VDescriptionView alloc] init];
-    [_descriptionView setText:_object.largeDescription];
-    _locationView = [[VLocationView alloc] init];
-    [_locationView setText:_object.location];
-    [_locationView setCoordinates:CGPointMake(_object.latitude, _object.longitude)];
-    NSLog(@"Latitude: %f, longitude: %f;", _object.latitude, _object.longitude);
-    _teamView = [[VTeamView alloc] init];
-    [_teamView setDelegate:self];
-    [_teamView setText:_object.team];
-//    [_teamView setSite_1:_object.customURL];
-//    [_teamView setSite_2:_object.objectURL];
+    [_markDescriptionLabel setText:LOCALIZE(@"description")];
+    [_markLocationLabel setText:LOCALIZE(@"location")];
+    [_markTeamLabel setText:LOCALIZE(@"team")];
+    [_valueDescriptionLabel setText:_object.largeDescription];
+    [_valueLocationLabel setText:_object.location];
+    [_valueTeamLabel setText:_object.team];
+    [self setCoordinates:CGPointMake(_object.latitude, _object.longitude)];
     [_site_1_Button setTitle:_object.customURL
                     forState:UIControlStateNormal];
     [_site_2_Button setTitle:_object.objectURL
                     forState:UIControlStateNormal];
-    [_accordionView addHeader:accordionControl1
-                     withView:_descriptionView];
-    [_accordionView addHeader:accordionControl2
-                     withView:_locationView];
-    [_accordionView addHeader:accordionControl3
-                     withView:_teamView];
-    [_accordionView setAllowsMultipleSelection:YES];
-    [_accordionView setAllowsEmptySelection:YES];
-    [_accordionView setStartsClosed:YES];
-    [_moreInfoContentView addSubview:_accordionView];
-    _descriptionHeight = _descriptionView.frame.size.height;
-    _locationHeight = _locationView.frame.size.height;
-    _teamHeight = _teamView.frame.size.height;
+//    [_accordionLC setConstant:3 * 84.f];
+//    _accordionView = [[AccordionView alloc] initWithFrame:CGRectMake(0.f, 0.f, SCREEN_WIDTH, FLT_MAX)];
+//    VAccordionControl *accordionControl1 = [[VAccordionControl alloc] initWithFrame:CGRectMake(0.f, 0.f, 0.f, 84.f)
+//                                                                          withTitle:LOCALIZE(@"description")];
+//    VAccordionControl *accordionControl2 = [[VAccordionControl alloc] initWithFrame:CGRectMake(0.f, 0.f, 0.f, 84.f)
+//                                                                          withTitle:LOCALIZE(@"location")];
+//    VAccordionControl *accordionControl3 = [[VAccordionControl alloc] initWithFrame:CGRectMake(0.f, 0.f, 0.f, 84.f)
+//                                                                          withTitle:LOCALIZE(@"team")];
+//    [accordionControl1 setVisualDelegate:self];
+//    [accordionControl2 setVisualDelegate:self];
+//    [accordionControl3 setVisualDelegate:self];
+//    [_accordionView setDelegate:self];
+//    _descriptionView = [[VDescriptionView alloc] init];
+//    [_descriptionView setText:_object.largeDescription];
+//    _locationView = [[VLocationView alloc] init];
+//    [_locationView setText:_object.location];
+//    [_locationView setCoordinates:CGPointMake(_object.latitude, _object.longitude)];
+//    NSLog(@"Latitude: %f, longitude: %f;", _object.latitude, _object.longitude);
+//    _teamView = [[VTeamView alloc] init];
+//    [_teamView setDelegate:self];
+//    [_teamView setText:_object.team];
+//    [_teamView setSite_1:_object.customURL];
+//    [_teamView setSite_2:_object.objectURL];
+//    [_accordionView addHeader:accordionControl1
+//                     withView:_descriptionView];
+//    [_accordionView addHeader:accordionControl2
+//                     withView:_locationView];
+//    [_accordionView addHeader:accordionControl3
+//                     withView:_teamView];
+//    [_accordionView setAllowsMultipleSelection:YES];
+//    [_accordionView setAllowsEmptySelection:YES];
+//    [_accordionView setStartsClosed:YES];
+//    [_moreInfoContentView addSubview:_accordionView];
+//    _descriptionHeight = _descriptionView.frame.size.height;
+//    _locationHeight = _locationView.frame.size.height;
+//    _teamHeight = _teamView.frame.size.height;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self registerOrientationChecking];
+//    [self registerOrientationChecking];
+    [UIView animateWithDuration:.6f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [_site_2_Button setAlpha:1.f];
+                     }
+                     completion:nil];
     if (_shareView && _layer) {
         return;
     }
     NSLog(@"Create share view and layer;");
     CGRect frame;
-    frame.origin.x = 18.f;
+    frame.origin.x = 256.f;
     frame.origin.y = SCREEN_HEIGHT / 2 - 450.f / 2;
-    frame.size.width = SCREEN_WIDTH - 2 * 18.f;
+    frame.size.width = SCREEN_WIDTH - 2 * 256.f;
     frame.size.height = 450.f;
     _shareView = [[VShareView alloc] initWithFrame:frame];
     [_shareView setDelegate:self];
@@ -176,15 +204,15 @@
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    [self unregisterOrientationChecking];
+//    [self unregisterOrientationChecking];
 }
 
 - (BOOL)shouldAutorotate {
-    return NO;
+    return YES;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
+    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
 }
 
 - (void)registerOrientationChecking {
@@ -199,7 +227,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void) orientationChanged:(NSNotification *)note {
+- (void)orientationChanged:(NSNotification *)note {
     UIDevice *device = note.object;
     switch (device.orientation) {
         case UIDeviceOrientationLandscapeLeft: {
@@ -221,8 +249,8 @@
 //    [_site_1_Button setImage:[UIImage imageNamed:@"big_right_arrow_button_default.png"]
 //                    forState:UIControlStateNormal];
     [_site_1_Button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-    [_site_1_Button setImageEdgeInsets:UIEdgeInsetsMake(0.f, SCREEN_WIDTH - 35 - 28.f, 0.f, 0.f)];
-    [_site_1_Button setTitleEdgeInsets:UIEdgeInsetsMake(0.f, -35.f + 28.f, 0.f, 0.f)];
+    [_site_1_Button setImageEdgeInsets:UIEdgeInsetsMake(0.f, SCREEN_WIDTH - 35.f - 40.f, 0.f, 0.f)];
+    [_site_1_Button setTitleEdgeInsets:UIEdgeInsetsMake(0.f, -35.f + 40.f, 0.f, 0.f)];
 }
 
 - (void)showPhotoesViewController {
@@ -234,6 +262,25 @@
     [self presentViewController:photoesVC
                        animated:YES
                      completion:nil];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                                                    reuseIdentifier:nil];
+    annotationView.image = [UIImage imageNamed:@"pin.png"];
+    return annotationView;
+}
+
+- (void)setCoordinates:(CGPoint)coordinates {
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinates.x
+                                                      longitude:coordinates.y];
+    MKCoordinateSpan span = MKCoordinateSpanMake(.008f, .008f);
+    MKCoordinateRegion region = MKCoordinateRegionMake(location.coordinate, span);
+    [_mapView setRegion:region
+               animated:NO];
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    [annotation setCoordinate:location.coordinate];
+    [_mapView addAnnotation:annotation];
 }
 
 - (void)fillObject {
@@ -289,11 +336,15 @@
 
 - (void)openURL:(NSString *)URL {
     NSLog(@"Open URL: %@;", URL);
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]
-                                       options:@{}
-                             completionHandler:^(BOOL success) {
-                                 //
-                             }];
+    if (SYSTEM_VERSION_GRATER_THAN_OR_EQUAL_TO(@"10.0")) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]
+                                           options:@{}
+                                 completionHandler:^(BOOL success) {
+                                     //
+                                 }];
+    } else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
+    }
 }
 
 #pragma mark - iCarouselDelegate, iCarouseDataSource
@@ -361,53 +412,53 @@
     [self showPhotoesViewController];
 }
 
-#pragma mark - AccordionView 
+//#pragma mark - AccordionView 
 
-- (void)accordion:(AccordionView *)accordion didChangeSelection:(NSIndexSet *)selection {
-    __block CGFloat result;
-    [selection enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
-        switch (idx) {
-            case 0:
-                result += _descriptionHeight;
-                break;
-            case 1:
-                result += _locationHeight;
-                break;
-            case 2:
-                result += _teamHeight;
-                break;
-            default:
-                break;
-        }
-    }];
-    [_accordionLC setConstant:3 * 84.f + result];
-}
+//- (void)accordion:(AccordionView *)accordion didChangeSelection:(NSIndexSet *)selection {
+//    __block CGFloat result;
+//    [selection enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+//        switch (idx) {
+//            case 0:
+//                result += _descriptionHeight;
+//                break;
+//            case 1:
+//                result += _locationHeight;
+//                break;
+//            case 2:
+//                result += _teamHeight;
+//                break;
+//            default:
+//                break;
+//        }
+//    }];
+//    [_accordionLC setConstant:3 * 84.f + result];
+//}
 
-#pragma mark - VAccordionControlVisualDelegate
-
-- (VAccordionControlElementsPosition *)elementsPositionForAccordionCntrol:(VAccordionControl *)accordionControl {
-    return [VAccordionControlElementsPosition standartProperties];
-}
-
-- (UIColor *)colorForOpenedAccordionControl:(VAccordionControl *)accordionControl {
-    return RGB(164.f, 80.f, 42.f);
-}
-
-- (UIColor *)colorForClosedAccordionControl:(VAccordionControl *)accordionControl {
-    return [UIColor whiteColor];
-}
-
-- (UIImage *)imageForOpenedAccordionControl:(VAccordionControl *)accordionControl {
-    return [UIImage imageNamed:@"icon_minus.png"];
-}
-
-- (UIImage *)imageForClosedAccordionControl:(VAccordionControl *)accordionControl {
-    return [UIImage imageNamed:@"icon_plus.png"];
-}
-
-- (UIColor *)colorForLineViewAccordionControl:(VAccordionControl *)accordionControl {
-    return [UIColor lightGrayColor];
-}
+//#pragma mark - VAccordionControlVisualDelegate
+//
+//- (VAccordionControlElementsPosition *)elementsPositionForAccordionCntrol:(VAccordionControl *)accordionControl {
+//    return [VAccordionControlElementsPosition standartProperties];
+//}
+//
+//- (UIColor *)colorForOpenedAccordionControl:(VAccordionControl *)accordionControl {
+//    return RGB(164.f, 80.f, 42.f);
+//}
+//
+//- (UIColor *)colorForClosedAccordionControl:(VAccordionControl *)accordionControl {
+//    return [UIColor whiteColor];
+//}
+//
+//- (UIImage *)imageForOpenedAccordionControl:(VAccordionControl *)accordionControl {
+//    return [UIImage imageNamed:@"icon_minus.png"];
+//}
+//
+//- (UIImage *)imageForClosedAccordionControl:(VAccordionControl *)accordionControl {
+//    return [UIImage imageNamed:@"icon_plus.png"];
+//}
+//
+//- (UIColor *)colorForLineViewAccordionControl:(VAccordionControl *)accordionControl {
+//    return [UIColor lightGrayColor];
+//}
 
 #pragma mark - VShareViewDelegate
 
@@ -495,11 +546,12 @@
     NSString *string = [NSString stringWithFormat:@"whatsapp://send?text=%@", [self URLChecking]];
     NSURL *URL = [NSURL URLWithString:string];
     if ([[UIApplication sharedApplication] canOpenURL:URL]) {
-        [[UIApplication sharedApplication] openURL:URL
-                                           options:@{}
-                                 completionHandler:^(BOOL success) {
-                                     //
-                                 }];
+        [self openURL:string];
+//        [[UIApplication sharedApplication] openURL:URL
+//                                           options:@{}
+//                                 completionHandler:^(BOOL success) {
+//                                     //
+//                                 }];
     } else {
         if (!_messageVC) {
             NSLog(@"Message view controller alloc;");

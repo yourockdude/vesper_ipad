@@ -23,6 +23,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self.contentView setBackgroundColor:RGB(28.f, 30.f, 34.f)];
 }
 
 - (void)setSelected:(BOOL)selected

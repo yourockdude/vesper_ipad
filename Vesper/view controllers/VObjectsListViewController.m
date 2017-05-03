@@ -53,7 +53,7 @@
 
 @implementation VObjectsListViewController
 
-@synthesize delegate;
+//@synthesize delegate;
 
 @synthesize contentView = _contentView;
 
@@ -83,16 +83,16 @@
     [_carouselView setDataSource:self];
     [_carouselView setDecelerationRate:.12f];
     [_carouselView setType:iCarouselTypeCustom];
-    frame.origin.x = 18.f;
+    frame.origin.x = 256.f;
     frame.origin.y = SCREEN_HEIGHT / 2 - 366.f / 2;
-    frame.size.width = SCREEN_WIDTH - 2 * 18.f;
+    frame.size.width = SCREEN_WIDTH - 2 * 256.f;
     frame.size.height = 366.f;
     _filterView = [[VFilterView alloc] initWithFrame:frame];
     [_filterView setDelegate:self];
     [self.view addSubview:_filterView];
     [_filterView hideAnimated:NO];
     _layer = [CALayer layer];
-    _layer.frame = self.view.bounds;
+    _layer.frame = [UIScreen mainScreen].bounds;
     _layer.backgroundColor = [UIColor blackColor].CGColor;
     [_layer setOpacity:.0f];
     [self.view.layer insertSublayer:_layer
@@ -114,7 +114,7 @@
     [self.view insertSubview:_menuVC.view
                 belowSubview:_menuButton];
     _motionManager = [[CMMotionManager alloc] init];
-    [self startAccelerometer];
+//    [self startAccelerometer]; // iPad version without accelerometer;
 }
 
 - (BOOL)shouldAutorotate {
@@ -137,19 +137,19 @@
     [_carouselView reloadData];
 }
 
-- (void)startAccelerometer {
-    if ([_motionManager isAccelerometerAvailable]) {
-        if (![_motionManager isAccelerometerActive]) {
-            [_motionManager setAccelerometerUpdateInterval:.25f];
-            [_motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue]
-                                                 withHandler:^(CMAccelerometerData * _Nullable accelerometerData, NSError * _Nullable error) {
-                                                     if (delegate) {
-                                                         [delegate didAccelerometerUpdateWithValue:accelerometerData.acceleration.x];
-                                                     }
-                                                 }];
-        }
-    }
-}
+//- (void)startAccelerometer {
+//    if ([_motionManager isAccelerometerAvailable]) {
+//        if (![_motionManager isAccelerometerActive]) {
+//            [_motionManager setAccelerometerUpdateInterval:.25f];
+//            [_motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue]
+//                                                 withHandler:^(CMAccelerometerData * _Nullable accelerometerData, NSError * _Nullable error) {
+//                                                     if (delegate) {
+//                                                         [delegate didAccelerometerUpdateWithValue:accelerometerData.acceleration.x];
+//                                                     }
+//                                                 }];
+//        }
+//    }
+//}
 
 - (void)showElements {
     [UIView animateWithDuration:.6f
@@ -237,9 +237,9 @@
     if (!view) {
         view = [[VCarouselView alloc] initWithFrame:_carouselView.frame];
     }
-    if (!delegate) {
-        [self setDelegate:((VCarouselView *)view)];
-    }
+//    if (!delegate) {
+//        [self setDelegate:((VCarouselView *)view)];
+//    }
     if (_objects.count > 0) {
         [((VCarouselView *)view) setImageURL:_objects[index].photos.firstObject];
         [((VCarouselView *)view) setProject:_objects[index].name];
@@ -283,7 +283,7 @@
 
 - (void)carouselDidEndScrollingAnimation:(iCarousel *)carousel {
     _menuButton.enabled = YES;
-    [self setDelegate:(VCarouselView *)_carouselView.currentItemView];
+//    [self setDelegate:(VCarouselView *)_carouselView.currentItemView];
 }
 
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index withPoint:(CGPoint)point {
@@ -307,7 +307,7 @@
         viewController = nil;
         view = _carouselView;
         [self showElements];
-        [self startAccelerometer];
+//        [self startAccelerometer];
     }
     [view setFrame:_contentView.bounds];
     [_contentView addSubview:view];
@@ -333,7 +333,7 @@
     [_menuVC hideAnimated:YES withCompletion:nil];
     if ([_contentView.subviews.lastObject class] == [iCarousel class]) {
         [self showElements];
-        [self startAccelerometer];
+//        [self startAccelerometer];
     }
 }
 
@@ -381,7 +381,7 @@
                withCompletion:nil];
         if ([_contentView.subviews.lastObject class] == [iCarousel class]) {
             [self showElements];
-            [self startAccelerometer];
+//            [self startAccelerometer];
         }
     }
     [_menuButton setSelected:!_menuButton.isSelected];

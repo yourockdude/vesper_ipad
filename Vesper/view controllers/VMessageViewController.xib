@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -28,26 +28,26 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SxH-NO-gfn">
-                    <rect key="frame" x="20" y="230" width="335" height="207.5"/>
+                    <rect key="frame" x="256" y="280.5" width="512" height="207"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tng-d5-UYV">
-                            <rect key="frame" x="146.5" y="30" width="42.5" height="24"/>
+                            <rect key="frame" x="235.5" y="30" width="42.5" height="24"/>
                             <fontDescription key="fontDescription" name="Acrom-Bold" family="Acrom" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svp-uk-9Qt">
-                            <rect key="frame" x="20" y="74" width="295" height="19.5"/>
+                            <rect key="frame" x="20" y="74" width="472" height="19"/>
                             <fontDescription key="fontDescription" name="Acrom-Light" family="Acrom" pointSize="16"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Deg-D3-k4E">
-                            <rect key="frame" x="65.5" y="133.5" width="204" height="44"/>
+                            <rect key="frame" x="154" y="133" width="204.5" height="44"/>
                             <color key="backgroundColor" red="0.64313725489999995" green="0.31372549020000001" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="204" id="59b-1u-hV4"/>
@@ -67,6 +67,7 @@
                         <constraint firstItem="tng-d5-UYV" firstAttribute="top" secondItem="SxH-NO-gfn" secondAttribute="top" constant="30" id="Q0l-gN-Y5C"/>
                         <constraint firstAttribute="trailing" secondItem="svp-uk-9Qt" secondAttribute="trailing" constant="20" id="Ux6-HV-CyQ"/>
                         <constraint firstAttribute="bottom" secondItem="Deg-D3-k4E" secondAttribute="bottom" constant="30" id="cgx-EO-xRe"/>
+                        <constraint firstAttribute="width" constant="512" id="haQ-Jx-r0w"/>
                         <constraint firstItem="svp-uk-9Qt" firstAttribute="leading" secondItem="SxH-NO-gfn" secondAttribute="leading" constant="20" id="oRv-YK-bd1"/>
                         <constraint firstItem="tng-d5-UYV" firstAttribute="centerX" secondItem="SxH-NO-gfn" secondAttribute="centerX" id="wyx-Ne-SBp"/>
                         <constraint firstItem="Deg-D3-k4E" firstAttribute="centerX" secondItem="SxH-NO-gfn" secondAttribute="centerX" id="yCT-c6-7YV"/>
@@ -75,8 +76,7 @@
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="SxH-NO-gfn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Aha-tt-RxF"/>
-                <constraint firstAttribute="trailing" secondItem="SxH-NO-gfn" secondAttribute="trailing" constant="20" id="Vei-Oo-49R"/>
+                <constraint firstItem="SxH-NO-gfn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HPi-p7-lH2"/>
                 <constraint firstItem="SxH-NO-gfn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="glG-aQ-caa"/>
             </constraints>
             <point key="canvasLocation" x="24.5" y="52.5"/>

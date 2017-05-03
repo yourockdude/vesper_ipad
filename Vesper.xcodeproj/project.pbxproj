@@ -10,7 +10,6 @@
 		C70114BD1DFAB2B9004EA24F /* VDescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C70114BC1DFAB2B9004EA24F /* VDescriptionView.m */; };
 		C70114C01DFAFA8C004EA24F /* VLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C70114BF1DFAFA8C004EA24F /* VLocationView.m */; };
 		C70114C21DFAFB5B004EA24F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70114C11DFAFB5B004EA24F /* MapKit.framework */; };
-		C703B1B11E9B61CB00B395C3 /* about_us_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C703B1B01E9B61CB00B395C3 /* about_us_image.jpg */; };
 		C712DEB41E266C22003A034F /* VUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C712DEB21E266C22003A034F /* VUpdateViewController.m */; };
 		C712DEB51E266C22003A034F /* VUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C712DEB31E266C22003A034F /* VUpdateViewController.xib */; };
 		C72743711E6D7DFE002FE590 /* VDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C727436F1E6D7DFE002FE590 /* VDocumentViewController.m */; };
@@ -35,6 +34,7 @@
 		C76883B31E51BB3B00D18AE9 /* mail_button_v_2_highlighted@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C76883AF1E51BB3B00D18AE9 /* mail_button_v_2_highlighted@3x.png */; };
 		C76883B71E51BD3100D18AE9 /* VPhotoesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76883B51E51BD3100D18AE9 /* VPhotoesViewController.m */; };
 		C76883B81E51BD3100D18AE9 /* VPhotoesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C76883B61E51BD3100D18AE9 /* VPhotoesViewController.xib */; };
+		C77269141EB9D53B00ED2C4A /* about_us_image_v_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C77269131EB9D53B00ED2C4A /* about_us_image_v_2.jpg */; };
 		C779C6E31DF94AB00046F026 /* VShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C779C6E21DF94AB00046F026 /* VShareView.xib */; };
 		C779C6E61DF94AE50046F026 /* VShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = C779C6E51DF94AE50046F026 /* VShareView.m */; };
 		C779C6E81DF971E70046F026 /* VFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C779C6E71DF971E70046F026 /* VFilterView.xib */; };
@@ -286,7 +286,6 @@
 		C70114BE1DFAFA8C004EA24F /* VLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLocationView.h; sourceTree = "<group>"; };
 		C70114BF1DFAFA8C004EA24F /* VLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLocationView.m; sourceTree = "<group>"; };
 		C70114C11DFAFB5B004EA24F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		C703B1B01E9B61CB00B395C3 /* about_us_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = about_us_image.jpg; sourceTree = "<group>"; };
 		C712DEB11E266C22003A034F /* VUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VUpdateViewController.h; sourceTree = "<group>"; };
 		C712DEB21E266C22003A034F /* VUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VUpdateViewController.m; sourceTree = "<group>"; };
 		C712DEB31E266C22003A034F /* VUpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VUpdateViewController.xib; sourceTree = "<group>"; };
@@ -319,6 +318,7 @@
 		C76883B41E51BD3100D18AE9 /* VPhotoesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPhotoesViewController.h; sourceTree = "<group>"; };
 		C76883B51E51BD3100D18AE9 /* VPhotoesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPhotoesViewController.m; sourceTree = "<group>"; };
 		C76883B61E51BD3100D18AE9 /* VPhotoesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VPhotoesViewController.xib; sourceTree = "<group>"; };
+		C77269131EB9D53B00ED2C4A /* about_us_image_v_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = about_us_image_v_2.jpg; sourceTree = "<group>"; };
 		C779C6E21DF94AB00046F026 /* VShareView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VShareView.xib; sourceTree = "<group>"; };
 		C779C6E41DF94AE50046F026 /* VShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VShareView.h; sourceTree = "<group>"; };
 		C779C6E51DF94AE50046F026 /* VShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VShareView.m; sourceTree = "<group>"; };
@@ -795,7 +795,7 @@
 		C78874E11DEECA7F00521AEE /* images */ = {
 			isa = PBXGroup;
 			children = (
-				C703B1B01E9B61CB00B395C3 /* about_us_image.jpg */,
+				C77269131EB9D53B00ED2C4A /* about_us_image_v_2.jpg */,
 				C73D500E1E4C550A00DDEBAA /* avrora_business_center.jpg */,
 				C789102E1E534D28003BA73E /* layer_page_control_image@2x.png */,
 				C789102F1E534D28003BA73E /* layer_page_control_image@3x.png */,
@@ -1279,6 +1279,7 @@
 				C76883B21E51BB3B00D18AE9 /* mail_button_v_2_highlighted@2x.png in Resources */,
 				C7ABD8881DF072E70048E0C5 /* animation_33@2x.png in Resources */,
 				C7ABD88A1DF072E70048E0C5 /* animation_34@2x.png in Resources */,
+				C77269141EB9D53B00ED2C4A /* about_us_image_v_2.jpg in Resources */,
 				C7ABD86B1DF072E70048E0C5 /* animation_18@3x.png in Resources */,
 				C7ABD8681DF072E70048E0C5 /* animation_17@2x.png in Resources */,
 				C7ABD8791DF072E70048E0C5 /* animation_25@3x.png in Resources */,
@@ -1353,7 +1354,6 @@
 				C779C6E81DF971E70046F026 /* VFilterView.xib in Resources */,
 				C7ABD8541DF072E70048E0C5 /* animation_07@2x.png in Resources */,
 				C7ABD8571DF072E70048E0C5 /* animation_08@3x.png in Resources */,
-				C703B1B11E9B61CB00B395C3 /* about_us_image.jpg in Resources */,
 				C7ABD87B1DF072E70048E0C5 /* animation_26@3x.png in Resources */,
 				C7ABD8641DF072E70048E0C5 /* animation_15@2x.png in Resources */,
 				C7C295BB1DF5B26200C13655 /* share_button_selected@2x.png in Resources */,

@@ -12,7 +12,7 @@
 #import "VObjectsListViewController.h"
 
 
-@interface VCarouselView : UIView <VObjectsListViewControllerDelegate>
+@interface VCarouselView : UIView // <VObjectsListViewControllerDelegate>
 
 @property (strong, nonatomic) UIView *contentView;
 

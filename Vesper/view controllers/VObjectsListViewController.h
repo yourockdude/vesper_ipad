@@ -27,7 +27,7 @@
 
 @interface VObjectsListViewController : UIViewController <VAboutUsViewControllerDelegate>
 
-@property (strong, nonatomic) id <VObjectsListViewControllerDelegate> delegate;
+//@property (strong, nonatomic) id <VObjectsListViewControllerDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 

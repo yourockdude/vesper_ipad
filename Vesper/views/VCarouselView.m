@@ -77,7 +77,7 @@
                                                               constant:0.f]];
     _labelProject = [[UILabel alloc] init];
     [_labelProject setFont:[UIFont fontWithName:@"Acrom-Bold"
-                                           size:42.f]];
+                                           size:50.f]];
     [_labelProject sizeToFit];
     [_labelProject setTextColor:[UIColor whiteColor]];
     [_labelProject setLineBreakMode:NSLineBreakByWordWrapping];
@@ -90,7 +90,7 @@
                                                                 toItem:_contentView
                                                              attribute:NSLayoutAttributeLeft
                                                             multiplier:1.f
-                                                              constant:30.f]];
+                                                              constant:64.f]];
     [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_labelProject
                                                              attribute:NSLayoutAttributeRight
                                                              relatedBy:NSLayoutRelationEqual
@@ -104,7 +104,7 @@
                                                                 toItem:_contentView
                                                              attribute:NSLayoutAttributeBottom
                                                             multiplier:1.f
-                                                              constant:-88.f]];
+                                                              constant:-104.f]];
     _arrowImageView = [[UIImageView alloc] init];
     [_arrowImageView setContentMode:UIViewContentModeRight];
     [_arrowImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -117,7 +117,7 @@
                                                                 toItem:_contentView
                                                              attribute:NSLayoutAttributeRight
                                                             multiplier:1.f
-                                                              constant:-22.f]];
+                                                              constant:-44.f]];
     [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_arrowImageView
                                                              attribute:NSLayoutAttributeTop
                                                              relatedBy:NSLayoutRelationEqual
@@ -127,7 +127,7 @@
                                                               constant:8.f]];
     _labelAddress = [[UILabel alloc] init];
     [_labelAddress setFont:[UIFont fontWithName:@"Acrom-Medium"
-                                           size:18.f]];
+                                           size:24.f]];
     [_labelAddress sizeToFit];
     [_labelAddress setTextColor:[UIColor whiteColor]];
     [_labelAddress setLineBreakMode:NSLineBreakByWordWrapping];
@@ -140,7 +140,7 @@
                                                                 toItem:_contentView
                                                              attribute:NSLayoutAttributeLeft
                                                             multiplier:1.f
-                                                              constant:30.f]];
+                                                              constant:64.f]];
     [_contentView addConstraint:[NSLayoutConstraint constraintWithItem:_labelAddress
                                                              attribute:NSLayoutAttributeRight
                                                              relatedBy:NSLayoutRelationEqual
@@ -154,7 +154,7 @@
                                                                 toItem:_labelProject
                                                              attribute:NSLayoutAttributeBottom
                                                             multiplier:1.f
-                                                              constant:0.f]];
+                                                              constant:8.f]];
     CALayer *layer = [CALayer layer];
     layer.frame = _imageView.bounds;
     layer.backgroundColor = [UIColor blackColor].CGColor;
@@ -205,25 +205,25 @@
     [_labelAddress setText:_address];
 }
 
-- (void)didAccelerometerUpdateWithValue:(CGFloat)value {
-    if (!_imageView.image) {
-        return;
-    }
-    CGRect resultRect;
-    CGFloat scaleHeight = SCREEN_HEIGHT / _imageView.image.size.height;
-    CGFloat offset = (1.f - (SCREEN_WIDTH / (_imageView.image.size.width * scaleHeight))) / 2;
-    if (value < -.2f) {
-        resultRect = CGRectMake(-offset, 0.f, 1.f, 1.f);
-    } else if (value > .2f) {
-        resultRect = CGRectMake(offset, 0.f, 1.f, 1.f);
-    } else if (value >= -.2f && value <= 2.f) {
-        resultRect = CGRectMake(0.f, 0.f, 1.f, 1.f);
-    }
-    [UIView animateWithDuration:1
-                     animations:^{
-                         [_imageView.layer setContentsRect:resultRect];
-                     }
-                     completion:nil];
-}
+//- (void)didAccelerometerUpdateWithValue:(CGFloat)value {
+//    if (!_imageView.image) {
+//        return;
+//    }
+//    CGRect resultRect;
+//    CGFloat scaleHeight = SCREEN_HEIGHT / _imageView.image.size.height;
+//    CGFloat offset = (1.f - (SCREEN_WIDTH / (_imageView.image.size.width * scaleHeight))) / 2;
+//    if (value < -.2f) {
+//        resultRect = CGRectMake(-offset, 0.f, 1.f, 1.f);
+//    } else if (value > .2f) {
+//        resultRect = CGRectMake(offset, 0.f, 1.f, 1.f);
+//    } else if (value >= -.2f && value <= 2.f) {
+//        resultRect = CGRectMake(0.f, 0.f, 1.f, 1.f);
+//    }
+//    [UIView animateWithDuration:1
+//                     animations:^{
+//                         [_imageView.layer setContentsRect:resultRect];
+//                     }
+//                     completion:nil];
+//}
 
 @end

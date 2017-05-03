@@ -46,6 +46,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view setFrame:[UIScreen mainScreen].bounds];
     [_titleLabel setText:_messageTitle];
     [_messageLabel setText:_message];
     [_button setTitle:_buttonTitle
@@ -56,11 +57,11 @@
 }
 
 - (BOOL)shouldAutorotate {
-    return NO;
+    return YES;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
+    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
 }
 
 - (void)setMessageTitle:(NSString *)messageTitle {

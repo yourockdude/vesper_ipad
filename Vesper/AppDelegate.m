@@ -92,8 +92,6 @@
     }
 }
 
-#pragma mark - UNUserNotificationCenterDelegate
-
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSLog(@"Device token: %@", deviceToken);
     if (!deviceToken) {
@@ -108,6 +106,10 @@
     [[VSettings sharedSettings] setRegistered:NO];
 }
 
+#ifdef SYSTEM_VERSION_GRATER_THAN_OR_EQUAL_TO_IOS_10
+
+#pragma mark - UNUserNotificationCenterDelegate
+
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
        willPresentNotification:(UNNotification *)notification
          withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
@@ -120,5 +122,13 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void (^)())completionHandler {
     completionHandler();
 }
+
+#else
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    //
+}
+
+#endif
 
 @end

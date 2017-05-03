@@ -85,7 +85,7 @@
     [_label setNumberOfLines:2];
     [_label setLineBreakMode:NSLineBreakByWordWrapping];
     [_label setFont:[UIFont fontWithName:@"Acrom-Medium"
-                                    size:16.f]];
+                                    size:24.f]];
     [_label setTextColor:[UIColor whiteColor]] ;
     [self addSubview:_label];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_label
@@ -94,7 +94,7 @@
                                                         toItem:self
                                                      attribute:NSLayoutAttributeLeft
                                                     multiplier:1.f
-                                                      constant:20.f]];
+                                                      constant:64.f]];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_label
                                                      attribute:NSLayoutAttributeRight
                                                      relatedBy:NSLayoutRelationEqual

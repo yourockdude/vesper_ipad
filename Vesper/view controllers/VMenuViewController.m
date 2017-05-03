@@ -22,7 +22,7 @@
 
 
 #define kMargin (128.f)
-#define kRowHeight (82.f)
+#define kRowHeight (102.f)
 
 
 @interface VMenuViewController () <UITableViewDelegate, UITableViewDataSource, VUpdateViewDelegate>
@@ -81,11 +81,11 @@
 }
 
 - (BOOL)shouldAutorotate {
-    return NO;
+    return YES;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
+    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
 }
 
 - (void)setChangelog:(NSDictionary *)changelog {
@@ -105,7 +105,8 @@
     [VUtils registerStringNameTableViewCellClass:NSStringFromClass([VMenuTableViewCell class])
                                     forTableView:_menuTableView
                              withReuseIdentifier:kReuseIdentifierMenu];
-    [_versionLabel setText:[NSString stringWithFormat:@"%@ | %@ | %@", LOCALIZE(@"version"), LOCALIZE(@"design"), LOCALIZE(@"development")]];
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [_versionLabel setText:[NSString stringWithFormat:@"%@ %@ | %@ | %@", LOCALIZE(@"version"), version, LOCALIZE(@"design"), LOCALIZE(@"development")]];
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] init];
     [swipe addTarget:self
               action:@selector(gestureRecognizerHandler)];
@@ -190,21 +191,29 @@
             break;
         case VMenuViewItemNews: {
             NSString *URL = @"http://m.vespermoscow.com/events/";
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]
-                                               options:@{}
-                                     completionHandler:^(BOOL success) {
-                                         //
-                                     }];
+            if (SYSTEM_VERSION_GRATER_THAN_OR_EQUAL_TO(@"10.0")) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]
+                                                   options:@{}
+                                         completionHandler:^(BOOL success) {
+                                             //
+                                         }];
+            } else {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
+            }
             return nil;
         }
             break;
         case VMenuViewItemCall: {
             NSString *format = [NSString stringWithFormat:@"tel:%@", @"+74952877799"];
+            if (SYSTEM_VERSION_GRATER_THAN_OR_EQUAL_TO(@"10.0")) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:format]
                                                options:@{}
                                      completionHandler:^(BOOL success) {
                                          //
                                      }];
+            } else {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:format]];
+            }
         }
             break;
         case VMenuViewItemUpdates: {
@@ -229,8 +238,8 @@
     ((VObjectsListViewController *)delegate).contentView.layer.zPosition = -1024.f;
     CATransform3D transform = CATransform3DIdentity;
     transform.m34 = 1.f / 1024.f;
-    transform = CATransform3DRotate(transform, DEGREES_TO_RADIANS(32.f), 0.f, 1.f, 0.f);
-    transform = CATransform3DTranslate(transform, 0.f, 0.f, 512.f);
+//    transform = CATransform3DRotate(transform, DEGREES_TO_RADIANS(32.f), 0.f, 1.f, 0.f);
+    transform = CATransform3DTranslate(transform, 512.f, 0.f, 512.f);
     if (!animated) {
         [self.view setTransform:CGAffineTransformIdentity];
         [((VObjectsListViewController *)delegate).contentView.layer setTransform:transform];
